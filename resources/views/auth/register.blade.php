@@ -73,6 +73,18 @@
                                 </div>
                             </div>
 
+                            {{-- Teléfono 'phone' --}}
+                            <div class="form-group mb-3 row">
+                                <div class="col-12">
+                                    <input class="form-control @error('phone') is-invalid @enderror" id="phone"
+                                        type="number" name="phone" 
+                                        placeholder="{{ __('Telephone') }}">
+                                    @error('phone')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             {{-- Correo electrónico 'email' --}}
                             <div class="form-group mb-3 row">
                                 <div class="col-12">

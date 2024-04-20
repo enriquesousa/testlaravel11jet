@@ -69,6 +69,9 @@
     "To enter the system it is necessary to log in, to use the system in <strong>Demo</strong> mode you can log in with the following credentials: <br> <br> <strong>User: </strong>demo<br> <strong>Password: </strong>demo": "Para ingresar al sistema es necesario iniciar sesión, para utilizar el sistema en modo <strong>Demo</strong> puede iniciar sesión con las siguientes credenciales: <br> <br> <strong>Usuario: </strong>demo <br> <strong>Contraseña: </strong>demo",
     
     "Made with": "Hecho con",
-    "by": "por"
+    "by": "por",
+
+    "Telephone": "Teléfono",
+    "Email/Username/Phone": "Correo electrónico/Nombre de usuario/Teléfono"
 
 }

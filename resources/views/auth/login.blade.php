@@ -63,7 +63,7 @@
                             </div> --}}
 
                             {{-- Correo electrónico 'email' --}}
-                            <div class="form-group mb-3 row">
+                            {{-- <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('email') is-invalid @enderror" id="email"
                                         type="email" name="email" required="" placeholder="{{ __('Email') }}">
@@ -71,7 +71,19 @@
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
                                 </div>
+                            </div> --}}
+
+                            {{-- Ingresar loginName: 'Email / Username / Phone' --}}
+                            <div class="form-group mb-3 row">
+                                <div class="col-12">
+                                    <input class="form-control @error('loginName') is-invalid @enderror" id="loginName"
+                                        type="text" name="loginName" required="" placeholder="{{ __('Email/Username/Phone') }}">
+                                    @error('loginName')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </div>
                             </div>
+
 
                             {{-- Contraseña 'password' --}}
                             <div class="form-group mb-3 row">

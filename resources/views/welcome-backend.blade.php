@@ -83,7 +83,7 @@
                                         <br>
                                         <br>
 
-                                        <a href="{{ route('inicio') }}" 
+                                        <a href="{{ route('dashboard') }}" 
                                             class="btn btn-success">
                                             {{ __('Continue to dashboard') }}
                                         </a>
