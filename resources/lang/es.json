@@ -3,9 +3,9 @@
     "Email": "Correo electrónico",
     "Password": "Contraseña",
     "Remember Me": "Recuérdame",
-    "Login": "Acceder",
+    "Login": "Iniciar Sesión",
     "Forgot Your Password?": "¿Olvidaste tu contraseña?",
-    "Register": "Registro",
+    "Register": "Regístrate",
     "Name": "Nombre",
     "Confirm Password": "Confirmar contraseña",
     "Reset Password": "Restablecer contraseña",
@@ -22,6 +22,7 @@
     "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser:": "Si tienes problemas haciendo click en el botón \":actionText\", copia y pega el siguiente\nenlace en tu navegador:",
     "Send Password Reset Link": "Enviar enlace para restablecer contraseña",
     "Logout": "Cerrar sesión",
+    "Log Out": "Cerrar sesión",
     "Verify Email Address": "Confirmar correo electrónico",
     "Please click the button below to verify your email address.": "Por favor pulsa el siguiente botón para confirmar tu correo electrónico.",
     "If you did not create an account, no further action is required.": "Si no has creado ninguna cuenta, puedes ignorar o eliminar este e-mail.",
@@ -34,5 +35,40 @@
     "Remember me":  "Recuérdame",
     "Forgot your password?":  "¿Olvidaste tu contraseña?",
     "Log in":  "Iniciar sesión",
-    "Profile Information":  "Información de perfil"
+    "Profile Information":  "Información de perfil",
+    "Create an account":  "Crear una cuenta",
+    
+    "Did you forget your password?. <strong>Do not worry!</strong>. Just let us know your email address and we will send you a link to reset your password that will allow you to choose a new one.":  "¿Olvidaste tu contraseña?. <strong>¡No te preocupes!</strong>. Simplemente háganos saber su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña que le permitirá elegir una nueva.",
+    
+    "<b>Recover password</b>":  "<b>Recuperar contraseña</b>",
+    "<b>Register Form</b>":  "<b>Forma de Registro</b>",
+    "Username":  "Nombre de usuario una sola palabra y en minúscula",
+
+    "I accept the ":  "Acepto",
+    "Terms and Conditions":  "términos y condiciones",
+    "Already have an account?":  "¿Ya tienes una cuenta?",
+    "Back to Home":  "Volver al inicio",
+    "Confirm Email":  "Confirmar correo electrónico",
+    "Thank you for signing up":  "Gracias por registrarte",
+
+    "A new verification link has been sent to the email address you provided during registration.":  "Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.",
+    
+    "As this is the first time you register this email, before starting, you will be sent a <b>verification</b> email. Could you please verify your email address by clicking on the link we just emailed you? If you did not receive the email, we will be happy to send you another one, <b>the link will be valid for only 1 hour</b>.":  "Como es la primera vez que registras este correo electrónico, antes de comenzar, se te enviará un correo electrónico de <b>verificación</b>. ¿Podría verificar su dirección de correo electrónico haciendo clic en el enlace que le acabamos de enviar por correo electrónico? Si no recibió el correo electrónico, estaremos encantados de enviarle otro, <b>el enlace será válido solo durante 1 hora</b>.",
+    
+    "Resend Verification Email":  "Reenviar correo electrónico de verificación",
+    "Register Password": "Entre Contraseña mínimo 8 caracteres",
+    "Welcome Page": "Página de bienvenida",
+
+    "Full Stack Web Developer Portfolio": "Desarrollador Web Full Stack | Portafolio",
+    "The user": "El usuario",
+    "is already logged in!": "ya está conectado!",
+    "You are logged in!": "Ya estas conectado!",
+    "Continue to dashboard": "Continuar al panel de control",
+    "Login Demo": "Iniciar sesión modo Demo",
+    
+    "To enter the system it is necessary to log in, to use the system in <strong>Demo</strong> mode you can log in with the following credentials: <br> <br> <strong>User: </strong>demo<br> <strong>Password: </strong>demo": "Para ingresar al sistema es necesario iniciar sesión, para utilizar el sistema en modo <strong>Demo</strong> puede iniciar sesión con las siguientes credenciales: <br> <br> <strong>Usuario: </strong>demo <br> <strong>Contraseña: </strong>demo",
+    
+    "Made with": "Hecho con",
+    "by": "por"
+
 }

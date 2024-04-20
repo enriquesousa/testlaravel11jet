@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-                    <h4 class="text-muted text-center font-size-18"><b>Iniciar Sesión</b></h4>
+                    <h4 class="text-muted text-center font-size-18"><b>{{ __('Login') }}</b></h4>
 
                     <div class="p-3">
 
@@ -66,7 +66,7 @@
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('email') is-invalid @enderror" id="email"
-                                        type="email" name="email" required="" placeholder="Correo electrónico">
+                                        type="email" name="email" required="" placeholder="{{ __('Email') }}">
                                     @error('email')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -77,7 +77,7 @@
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('password') is-invalid @enderror" id="password"
-                                        type="password" name="password" required="" placeholder="Entre contraseña">
+                                        type="password" name="password" required="" placeholder="{{ __('Password') }}">
                                     @error('password')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -90,7 +90,7 @@
                                 <div class="col-12">
                                     <div class="custom-control custom-checkbox">
                                         <input id="remember_me" type="checkbox" name="remember" class="custom-control-input">
-                                        <label class="form-label ms-1" for="customCheck1">Recuérdame</label>
+                                        <label class="form-label ms-1" for="customCheck1">{{ __('Remember me') }}</label>
                                     </div>
                                 </div>
                             </div>
@@ -98,17 +98,25 @@
                             {{-- Iniciar Sesión --}}
                             <div class="form-group mb-3 text-center row mt-3 pt-1">
                                 <div class="col-12">
-                                    <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Iniciar Sesión</button>
+                                    <button class="btn btn-info w-100 waves-effect waves-light" type="submit">
+                                        {{ __('Login') }}
+                                    </button>
                                 </div>
                             </div>
 
                             {{-- ¿Olvidaste tu contraseña? y Crear una cuenta --}}
                             <div class="form-group mb-0 row mt-2">
                                 <div class="col-sm-7 mt-3">
-                                    <a href="{{ route('password.request') }}" class="text-muted"><i class="mdi mdi-lock"></i>¿Olvidaste tu contraseña?</a>
+                                    <a href="{{ route('password.request') }}" class="text-muted">
+                                        <i class="mdi mdi-lock"></i>
+                                        {{ __('Forgot your password?') }}
+                                    </a>
                                 </div>
                                 <div class="col-sm-5 mt-3">
-                                    <a href="{{ route('register') }}" class="text-muted"><i class="mdi mdi-account-circle"></i> Crear una cuenta</a>
+                                    <a href="{{ route('register') }}" class="text-muted">
+                                        <i class="mdi mdi-account-circle"></i> 
+                                        {{ __('Create an account') }}
+                                    </a>
                                 </div>
                             </div>
 

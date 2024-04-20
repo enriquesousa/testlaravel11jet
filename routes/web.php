@@ -15,3 +15,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+// Mis Rutas
+
+Route::get('/backend/welcome', function () {
+    return view('welcome-backend');
+})->name('backend_welcome');
+
