@@ -62,7 +62,7 @@
                             </div>
 
                             {{-- Nombre de Usuario Corto 'username' --}}
-                            <div class="form-group mb-3 row">
+                            {{-- <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('username') is-invalid @enderror" id="username"
                                         type="text" name="username" required=""
@@ -71,10 +71,10 @@
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
 
                             {{-- Teléfono 'phone' --}}
-                            <div class="form-group mb-3 row">
+                            {{-- <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('phone') is-invalid @enderror" id="phone"
                                         type="number" name="phone" 
@@ -83,7 +83,7 @@
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
 
                             {{-- Correo electrónico 'email' --}}
                             <div class="form-group mb-3 row">

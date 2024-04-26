@@ -49,6 +49,9 @@
                         <form class="form-horizontal mt-3" method="POST" action="{{ route('login') }}">
                             @csrf
 
+                            
+                            {{-- <input type="hidden" name="username" id="" value="username_test">
+                            <input type="hidden" name="phone" id="" value="phone_test"> --}}
 
                             {{-- Nombre de Usuario Corto 'username' --}}
                             {{-- <div class="form-group mb-3 row">
@@ -63,18 +66,18 @@
                             </div> --}}
 
                             {{-- Correo electrónico 'email' --}}
-                            {{-- <div class="form-group mb-3 row">
+                            <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('email') is-invalid @enderror" id="email"
-                                        type="email" name="email" required="" placeholder="{{ __('Email') }}">
+                                        type="text" name="email" required="" placeholder="{{ __('Email') }}">
                                     @error('email')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
                                 </div>
-                            </div> --}}
+                            </div>
 
                             {{-- Ingresar loginName: 'Email / Username / Phone' --}}
-                            <div class="form-group mb-3 row">
+                            {{-- <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('loginName') is-invalid @enderror" id="loginName"
                                         type="text" name="loginName" required="" placeholder="{{ __('Email/Username/Phone') }}">
@@ -82,7 +85,7 @@
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
 
 
                             {{-- Contraseña 'password' --}}
