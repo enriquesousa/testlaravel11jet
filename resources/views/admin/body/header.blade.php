@@ -460,7 +460,10 @@
                     
                     {{-- Perfil --}}
                     {{-- {{ route('admin.view.profile') }} --}}
-                    <a class="dropdown-item" href=""><i class="ri-user-line align-middle me-1"></i> Perfil</a>
+                    <a href="{{ route('admin.view.profile') }}" class="dropdown-item">
+                        <i class="ri-user-line align-middle me-1"></i>
+                         Perfil
+                    </a>
 
                     {{-- Cambiar contraseña --}}
                     {{-- {{ route('admin.change.password') }} --}}

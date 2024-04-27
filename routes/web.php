@@ -15,14 +15,25 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+
+
+// Dos Paneles de Entrada (Dashboard normal y Dashboard de Control para Administradores)
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
+    ])->group(function () {
+
+    // En Dashboard que es la pagina principal de inicio cuando hacemos login con Jetstream
     Route::get('/dashboard', function () {
         return view('admin.index');
     })->name('dashboard');
+
+    // Panel de Control / Dashboard de Control para Administradores
+    Route::get('/dashboard_admin', function () {
+        return view('admin.dashboard');
+    })->name('dashboard_admin');
+
 });
 
 
@@ -46,7 +57,7 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(AdminController::class)->group(function () {
         Route::get('/admin/logout', 'AdminDestroy')->name('admin.logout');
-        // Route::get('/admin/view/profile', 'ViewProfile')->name('admin.view.profile');
+        Route::get('/admin/view/profile', 'ViewProfile')->name('admin.view.profile');
         // Route::get('/admin/edit/profile', 'EditProfile')->name('admin.edit.profile');
         // Route::post('/admin/store/profile', 'StoreProfile')->name('admin.store.profile');
     

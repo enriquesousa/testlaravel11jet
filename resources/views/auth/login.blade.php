@@ -48,7 +48,6 @@
 
                         <form class="form-horizontal mt-3" method="POST" action="{{ route('login') }}">
                             @csrf
-
                             
                             {{-- <input type="hidden" name="username" id="" value="username_test">
                             <input type="hidden" name="phone" id="" value="phone_test"> --}}

@@ -35,24 +35,25 @@
                 <!-- * MENU -->
                 <li class="menu-title">Menu</li>
 
-                <!-- Dashboard Inicio -->
-                <li>
-                    {{-- {{ route('inicio') }} --}}
-                    <a href="" class="waves-effect">
-                        <i class="ri-dashboard-line"></i>
-                        {{-- <span class="badge rounded-pill bg-success float-end">3</span> --}}
-                        <span>Panel Inicio</span>
-                    </a>
-                </li>
-
-                <!-- Dashboard Control -->
+                <!-- Dashboard Panel de Inicio -->
                 <li>
                     <a href="{{ route('dashboard') }}" class="waves-effect">
                         <i class="ri-dashboard-line"></i>
                         {{-- <span class="badge rounded-pill bg-success float-end">3</span> --}}
-                        <span>Panel Control</span>
+                        <span>Panel de Inicio</span>
                     </a>
                 </li>
+
+                <!-- Dashboard de Control para Admin -->
+                <li>
+                    <a href="{{ route('dashboard_admin') }}" class="waves-effect">
+                        <i class="ri-dashboard-line"></i>
+                        {{-- <span class="badge rounded-pill bg-success float-end">3</span> --}}
+                        <span>Panel de Admin</span>
+                    </a>
+                </li>
+
+                
 
                 <!-- Proveedores -->
                 <li>

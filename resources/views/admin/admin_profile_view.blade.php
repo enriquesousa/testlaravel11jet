@@ -29,7 +29,8 @@
                             <h4 class="mb-0">{{ $adminData->name }}</h4>
                             <p class="text-muted">{{ $adminData->email }}</p>
                             
-                            <a href="{{ route('admin.edit.profile') }}">
+                            {{-- {{ route('admin.edit.profile') }} --}}
+                            <a href="">
                                 <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Editar Perfil</button>
                             </a>
 

@@ -26,7 +26,12 @@ class AdminController extends Controller
         return redirect('/login')->with($notification); 
     }
 
-    
+    // AdminProfile
+    public function ViewProfile(){
+        $id = Auth::user()->id;
+        $adminData = User::findOrFail($id);
+        return view('admin.admin_profile_view', compact('adminData'));
+    }
 
 
 
