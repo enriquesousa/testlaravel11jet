@@ -48,8 +48,9 @@
     "Terms and Conditions":  "términos y condiciones",
     "Already have an account?":  "¿Ya tienes una cuenta?",
     "Back to Home":  "Volver al inicio",
+    "Return to":  "Regresar a",
     "Confirm Email":  "Confirmar correo electrónico",
-    "Thank you for signing up":  "Gracias por registrarte",
+    "Thank you for signing up":  "Gracias por registrarte!",
 
     "A new verification link has been sent to the email address you provided during registration.":  "Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.",
     
@@ -58,8 +59,10 @@
     "Resend Verification Email":  "Reenviar correo electrónico de verificación",
     "Register Password": "Entre Contraseña mínimo 8 caracteres",
     "Welcome Page": "Página de bienvenida",
+    "Welcome": "Bienvenido",
+    "Frontend Page": "Pagina de Frontend",
 
-    "Full Stack Web Developer Portfolio": "Desarrollador Web Full Stack | Portafolio",
+    "Full Stack Web Development": "Desarrollo Web Full Stack",
     "The user": "El usuario",
     "is already logged in!": "ya está conectado!",
     "You are logged in!": "Ya estas conectado!",
@@ -105,7 +108,47 @@
 
     "Photo": "Foto",
     "Select A New Photo": "SELECCIONAR UNA NUEVA FOTO",
-    "Remove Photo": "ELIMINAR FOTO"
+    "Remove Photo": "ELIMINAR FOTO",
+
+    "Application": "Aplicación",
+    "Help": "Ayuda",
+    "Go directly to the app, where you can log in or create an account to access": "Ir directamente a la aplicación, donde puedes iniciar sesión o crear una cuenta para acceder",
+    "Brief description of the application. For more information please contact us": "Breve descripción de la aplicación. Para obtener más información, póngase en contacto con nosotros",
+
+    "You do not have an account? Create your account, it will take you less than a minute": "¿No tienes una cuenta? Crea tu cuenta, tomará menos de un minuto",
+
+    "Features": "Características",
+
+    "Enter your email, phone or username and password to access the administration panel.": "Introduce tu correo electrónico, teléfono o usuario y contraseña para acceder al panel de administración.",
+
+    "Please enter your new password and confirm it.": "Por favor introduzca su nueva contraseña y confirme.",
+
+    "Go to my profile": "Ir a mi perfil",
+    "Go to Control Panel": "Ir al panel de control",
+    "Control Panel": "Panel de Control",
+    "My Profile": "Mi Perfil",
+    "Admin Profile": "Perfil de Administrador",
+    "Sign up using": "Registrarse usando",
+    "Sign in with": "Iniciar sesión con",
+
+    "Finish enabling two factor authentication.": "Finalice la habilitación de la autenticación de dos factores.",
+    "To finish enabling two factor authentication, scan the following QR code using your phone's authenticator application or enter the setup key and provide the generated OTP code.": "Para terminar de habilitar la autenticación de dos factores, escanee el siguiente código QR usando la aplicación de autenticación de su teléfono o ingrese la clave de configuración y proporcione el código OTP generado.",
+    "Code": "Código",
+    "The provided two factor authentication code was invalid.": "El código de autenticación de dos factores proporcionado no es válido.",
+    "You have enabled two factor authentication.": "Has habilitado la autenticación de dos factores.",
+    "Store these recovery codes in a secure password manager. They can be used to recover access to your account if your two factor authentication device is lost.": "Almacene estos códigos de recuperación en un gestor de contraseña segura. Pueden utilizarse para recuperar el acceso a su cuenta si su dispositivo de autenticación de dos factores se pierde.",
+    "Regenerate Recovery Codes": "Regenerar Códigos de Recuperación",
+    "Disable": "Deshabilitar",
+    "Show Recovery Codes": "Mostrar Códigos de Recuperación",
+    "Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.": "Por favor, introduzca su contraseña para confirmar que desea cerrar sesión de sus otras sesiones de navegador en todos sus dispositivos.",
+    "Please confirm access to your account by entering the authentication code provided by your authenticator application.": "Por favor, confirme el acceso a su cuenta introduciendo el código de autenticación proporcionado por su aplicación de autenticación.",
+    "Use a recovery code": "Usar Código de Recuperación",
+    "Please confirm access to your account by entering one of your emergency recovery codes.": "Por favor, confirme el acceso a su cuenta introduciendo uno de los código de recuperación de emergencia.",
+    "Recovery Code": "Código de Recuperación",
+    "Use an authentication code": "Usar Código de Autenticación",
+    "Whoops! Something went wrong.": "¡Vaya! Algo salio mal.",
+    "The provided two factor recovery code was invalid.": "El código de recuperación de dos factores proporcionado no es válido.",
+    "This is a secure area of the application. Please confirm your password before continuing.": "Estas en una zona segura de la aplicación. Por favor confirme su contraseña antes de continuar."
 
 
 }

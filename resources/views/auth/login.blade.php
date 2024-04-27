@@ -69,7 +69,7 @@
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('email') is-invalid @enderror" id="email"
-                                        type="text" name="email" required="" placeholder="{{ __('Email') }}">
+                                        type="text" name="email" required="" placeholder="{{ __('Email/Username/Phone') }}">
                                     @error('email')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
