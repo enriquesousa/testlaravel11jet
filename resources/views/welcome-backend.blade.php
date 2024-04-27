@@ -191,7 +191,13 @@
                                 </small>
                                 <br>
                                 <small class="text-muted">
-                                    {!! htmlspecialchars_decode(date('j<\s\up>S</\s\up> F Y', strtotime(now()))) !!} 
+                                    {{-- {!! htmlspecialchars_decode(date('j<\s\up>S</\s\up> F Y', strtotime(now()))) !!}  --}}
+                                    @php
+                                        $mytime = Carbon\Carbon::now();
+                                        // echo $mytime->toDateTimeString();
+                                    @endphp
+                                    {{-- {{ $mytime->format('d-M-Y H:i') }}  --}}
+                                    {{ formatFecha1($mytime) }} {{ $mytime->format('H:i') }}
                                 </small>
 
                             </div>
