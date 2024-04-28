@@ -28,26 +28,42 @@
                             <p class="text-muted">{{ $adminData->email }}</p>
                             
                             {{-- {{ route('admin.edit.profile') }} --}}
-                            <a href="{{ route('profile.show') }}">
+                            <a href="{{ route('admin.edit.jet.profile') }}">
                                 <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">
                                     {{-- Editar Perfil --}}
                                     {{ __('Edit Profile') }}
                                 </button>
                             </a>
 
-                            <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light">
-                                {{-- Mensaje --}}
-                                {{ __('Message') }}
-                            </button>
+                            <a href="{{ route('admin.edit.photo') }}">
+                                <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light">
+                                    {{-- Editar Foto --}}
+                                    {{ __('Edit Photo') }}
+                                </button>
+                            </a>
     
                             {{-- <div class="text-start mt-3"> --}}
                             <div class="mt-3">                                
                                 
-                                <p class="text-muted mb-2 font-13"><strong>Nombre:</strong> <span class="ms-2">{{ $adminData->name }}</span></p>
+                                <p class="text-muted mb-2 font-13">
+                                    <strong>{{ __('Name') }}:</strong>
+                                    <span class="ms-2">{{ $adminData->name }}</span>
+                                </p>
                             
-                                <p class="text-muted mb-2 font-13"><strong>Usuario:</strong><span class="ms-2">{{ $adminData->username }}</span></p>
+                                <p class="text-muted mb-2 font-13">
+                                    <strong>{{ __('Username Short') }}:</strong>
+                                    <span class="ms-2">{{ $adminData->username }}</span>
+                                </p>
                             
-                                <p class="text-muted mb-2 font-13"><strong>Correo:</strong> <span class="ms-2">{{ $adminData->email }}</span></p>
+                                <p class="text-muted mb-2 font-13">
+                                    <strong>{{ __('Telephone') }}:</strong>
+                                    <span class="ms-2">{{ $adminData->phone }}</span>
+                                </p>
+
+                                <p class="text-muted mb-2 font-13">
+                                    <strong>{{ __('Email') }}:</strong>
+                                    <span class="ms-2">{{ $adminData->email }}</span>
+                                </p>
                                 
                             </div> 
 

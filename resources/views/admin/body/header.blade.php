@@ -466,8 +466,13 @@
 
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    {{-- <img class="rounded-circle header-profile-user"
+                        src="{{ (!empty($adminData->profile_photo_path) ? url($adminData->profile_photo_path) : url('upload/no_image.jpg')) }}" alt="Header Avatar"> --}}
+
                     <img class="rounded-circle header-profile-user"
-                        src="{{ (!empty($adminData->profile_photo_path) ? url($adminData->profile_photo_path) : url('upload/no_image.jpg')) }}" alt="Header Avatar">
+                    src="{{ (!empty($adminData->profile_image) ? url('upload/admin_images/'.$adminData->profile_image) : url('upload/no_image.jpg')) }}" alt="Header Avatar">                        
+
                     <span class="d-none d-xl-inline-block ms-1">{{ $adminData->username }}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
@@ -480,18 +485,38 @@
                         {{ __('Profile') }}
                     </a>
 
-                    {{-- Perfil Admin Todo con ayuda de x blade Jetstream --}}
-                    <a href="{{ route('profile.show') }}" class="dropdown-item">
-                        <i class="ri-settings-2-line align-middle me-1"></i>
-                        {{ __('Profile Settings') }} 
+                    {{-- Editar Foto --}}
+                    <a href="{{ route('admin.edit.photo') }}" class="dropdown-item">
+                        <i class="ri-user-line align-middle me-1"></i>
+                        {{ __('Edit Photo') }}
+                    </a>
+
+                    {{-- Editar Perfil --}}
+                    <a href="{{ route('admin.edit.profile') }}" class="dropdown-item">
+                        <i class="ri-user-line align-middle me-1"></i>
+                        {{ __('Edit Profile') }}
+                    </a>
+
+                    {{-- Editar Perfil Jet --}}
+                    <a href="{{ route('admin.edit.jet.profile') }}" class="dropdown-item">
+                        <i class="ri-user-line align-middle me-1"></i>
+                        {{ __('Edit Profile Jet') }}
                     </a>
 
                     {{-- Cambiar contraseña --}}
                     {{-- {{ route('admin.change.password') }} --}}
-                    {{-- <a class="dropdown-item" href="">
+                    <a href="{{ route('admin.change.password') }}" class="dropdown-item">
                         <i class="ri-lock-unlock-line align-middle me-1"></i>
-                         Cambiar contraseña
-                    </a> --}}
+                        {{ __('Change Password Jet') }}
+                    </a>
+
+                    {{-- Perfil Admin Todo con ayuda de x blade Jetstream --}}
+                    <a href="{{ route('profile.show') }}" class="dropdown-item">
+                        <i class="ri-settings-2-line align-middle me-1"></i>
+                        {{ __('Profile Settings Jet') }} 
+                    </a>
+
+                    
 
                     {{-- Settings --}}
                     {{-- <a href="#" class="dropdown-item d-block">

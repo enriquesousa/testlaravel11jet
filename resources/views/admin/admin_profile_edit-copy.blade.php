@@ -1,6 +1,5 @@
 @extends('admin.admin_master')
 @section('admin')
-
     {{-- Jquery CDN Para poder usar JS --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -16,13 +15,12 @@
 
                             <h4 class="card-title">Editar Perfil</h4>
 
-                            {{-- {{ route('admin.store.profile') }} --}}
-                            <form method="POST" action="" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('admin.store.profile') }}" enctype="multipart/form-data">
                                 @csrf
 
                                 {{-- Nombre --}}
                                 <div class="row mb-3">
-                                    <label for="name" class="col-sm-2 col-form-label">{{ __('Name') }}</label>
+                                    <label for="name" class="col-sm-2 col-form-label">Nombre</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" name="name" type="text" id="name"
                                             value="{{ $editData->name }}">
@@ -31,19 +29,10 @@
 
                                 {{-- Username --}}
                                 <div class="row mb-3">
-                                    <label for="username" class="col-sm-2 col-form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Nombre de usuario una sola palabra y en minúscula">{{ __('Username Short') }}</label>
+                                    <label for="username" class="col-sm-2 col-form-label">Usuario</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" name="username" type="text" id="username"
                                             value="{{ $editData->username }}">
-                                    </div>
-                                </div>
-
-                                {{-- Teléfono --}}
-                                <div class="row mb-3">
-                                    <label for="phone" class="col-sm-2 col-form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Acepta solo números">{{ __('Telephone') }}</label>
-                                    <div class="col-sm-10">
-                                        <input class="form-control" name="username" type="number" id="username"
-                                            value="{{ $editData->phone }}">
                                     </div>
                                 </div>
 
@@ -106,5 +95,4 @@
             });
         });
     </script>
-
 @endsection

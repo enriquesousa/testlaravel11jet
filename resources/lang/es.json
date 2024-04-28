@@ -43,6 +43,7 @@
     "<b>Recover password</b>":  "<b>Recuperar contraseña</b>",
     "<b>Register Form</b>":  "<b>Forma de Registro</b>",
     "Username":  "Nombre de usuario una sola palabra y en minúscula",
+    "Username Short":  "Nombre Corto",
 
     "I accept the ":  "Acepto",
     "Terms and Conditions":  "términos y condiciones",
@@ -109,6 +110,7 @@
     "Photo": "Foto",
     "Select A New Photo": "SELECCIONAR UNA NUEVA FOTO",
     "Remove Photo": "ELIMINAR FOTO",
+    "Edit Photo": "Editar Foto",
 
     "Application": "Aplicación",
     "Help": "Ayuda",
@@ -158,9 +160,13 @@
     "Settings": "Configuraciones",
     "About": "Acerca de",
     "Profile Settings": "Config. Perfil",
+    "Profile Settings Jet": "Config. Perfil Jet",
     "Manage Account": "Administrar Cuenta",
     "Edit Profile": "Editar Perfil",
-    "Message": "Mensaje"
+    "Edit Profile Jet": "Editar Perfil Jet",
+    "Message": "Mensaje",
+    "Change Password": "Cambiar Contraseña",
+    "Change Password Jet": "Cambiar Contraseña Jet"
     
 
 

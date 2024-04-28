@@ -77,6 +77,29 @@ class AdminController extends Controller
 
     }
 
+    // EditProfile
+    public function EditProfile(){
+        $id = Auth::user()->id;
+        $editData = User::findOrFail($id);
+        return view('admin.admin_profile_edit', compact('editData'));
+    }
+
+    // EditProfile
+    public function EditProfileJet(){
+       return view('admin.admin_profile_jet_edit');
+    }
+
+    // ChangePassword
+    public function ChangePassword(){
+        return view('admin.admin_change_password');
+    }
+
+    // EditProfilePhoto
+    public function EditProfilePhoto(){
+       return view('admin.admin_profile_edit_photo');
+    }
+
+
 
 
 }

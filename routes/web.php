@@ -58,10 +58,14 @@ Route::middleware('auth')->group(function () {
     Route::controller(AdminController::class)->group(function () {
         Route::get('/admin/logout', 'AdminDestroy')->name('admin.logout');
         Route::get('/admin/view/profile', 'ViewProfile')->name('admin.view.profile');
-        // Route::get('/admin/edit/profile', 'EditProfile')->name('admin.edit.profile');
+
+        Route::get('/admin/edit/profile', 'EditProfile')->name('admin.edit.profile');
+        Route::get('/admin/edit/profile/jet', 'EditProfileJet')->name('admin.edit.jet.profile');
+        Route::get('/admin/edit/photo', 'EditProfilePhoto')->name('admin.edit.photo');
+
         // Route::post('/admin/store/profile', 'StoreProfile')->name('admin.store.profile');
     
-        // Route::get('/admin/change/password', 'ChangePassword')->name('admin.change.password');
+        Route::get('/admin/change/password', 'ChangePassword')->name('admin.change.password');
         // Route::post('/admin/update/password', 'UpdatePassword')->name('admin.update.password');
 
         Route::get('/admin/change/locale/us', 'AdminChangeLocaleUS')->name('admin.change.locale.us');
