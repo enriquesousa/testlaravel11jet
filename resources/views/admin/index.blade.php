@@ -33,16 +33,18 @@
                                             </p>
     
                                             <span class="text-muted">
-                                                <i class="ri-record-circle-line align-middle font-size-14 text-success"></i>
-                                                En Linea
+                                                <i class="ri-record-circle-line align-middle font-size-14 text-success">
+                                                </i>
+                                                {{-- En Linea --}}
+                                                {{ __('Online') }}
                                             </span>
                                             <br>
                                             <br>
                                             
-                                            {{-- {{ route('admin.view.profile') }} --}}
-                                            <a href="" 
+                                            <a href="{{ route('admin.view.profile') }}" 
                                                 class="btn btn-success">
-                                                Ir a Mi Perfil
+                                                {{-- Ir a Mi Perfil --}}
+                                                {{ __('Go to my profile') }}
                                             </a>
                                         </div>
                                     </div>
@@ -56,12 +58,32 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
-                                        <img src="{{ asset('logo/TJWeblogo.png') }}" alt="" width="80px">
+                                        <img src="{{ asset('logo/TJWeblogo.png') }}" alt="" width="90px">
                                     </div>
                                 </div>
                             </div>
-                            <br>
-    
+
+                            {{-- Footer: Version de Laravel y PHP --}}
+                            <div class="form-group row mt-1">
+                                <div class="text-center">
+                                    <small class="text-muted">
+                                        Laravel v{{ Illuminate\Foundation\Application::VERSION }}
+                                        (PHP v{{ PHP_VERSION }})
+                                    </small>
+                                    <br>
+                                    <small class="text-muted">
+                                        {{-- {!! htmlspecialchars_decode(date('j<\s\up>S</\s\up> F Y', strtotime(now()))) !!}  --}}
+                                        @php
+                                            $mytime = Carbon\Carbon::now();
+                                            // echo $mytime->toDateTimeString();
+                                        @endphp
+                                        {{-- {{ $mytime->format('d-M-Y H:i') }}  --}}
+                                        {{ formatFecha1($mytime) }} {{ $mytime->format('h:i A') }}
+                                    </small>
+
+                                </div>
+                            </div>
+
                             {{-- Footer del Logo --}}
                             <div class="row">
                                 <div class="col-sm-12 text-center">

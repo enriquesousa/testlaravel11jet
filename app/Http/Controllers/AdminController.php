@@ -33,6 +33,50 @@ class AdminController extends Controller
         return view('admin.admin_profile_view', compact('adminData'));
     }
 
+    // AdminChangeLocaleUS
+    public function AdminChangeLocaleUS(){
+
+        // Change env variable
+        $path = base_path('.env');
+        if (file_exists($path)) {
+            file_put_contents($path, str_replace(
+                'APP_LOCALE=es',
+                'APP_LOCALE=en',
+                file_get_contents($path)
+            ));
+        }
+
+        $notification = array(
+            'message' => 'Language has been changed to ENGLISH',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    }
+
+    // AdminChangeLocaleES
+    public function AdminChangeLocaleES(){
+
+        // Change env variable
+        $path = base_path('.env');
+        if (file_exists($path)) {
+            file_put_contents($path, str_replace(
+                'APP_LOCALE=en',
+                'APP_LOCALE=es',
+                file_get_contents($path)
+            ));
+        }
+
+        $notification = array(
+            'message' => 'El lenguaje ha sido cambiado a ESPAÑOL',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    }
+
 
 
 }

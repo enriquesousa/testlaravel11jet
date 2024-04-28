@@ -29,10 +29,16 @@
                             
                             {{-- {{ route('admin.edit.profile') }} --}}
                             <a href="{{ route('profile.show') }}">
-                                <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Editar Perfil</button>
+                                <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">
+                                    {{-- Editar Perfil --}}
+                                    {{ __('Edit Profile') }}
+                                </button>
                             </a>
 
-                            <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light">Message</button>
+                            <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light">
+                                {{-- Mensaje --}}
+                                {{ __('Message') }}
+                            </button>
     
                             {{-- <div class="text-start mt-3"> --}}
                             <div class="mt-3">                                

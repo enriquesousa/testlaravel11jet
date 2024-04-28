@@ -197,7 +197,7 @@
                                         // echo $mytime->toDateTimeString();
                                     @endphp
                                     {{-- {{ $mytime->format('d-M-Y H:i') }}  --}}
-                                    {{ formatFecha1($mytime) }} {{ $mytime->format('H:i') }}
+                                    {{ formatFecha1($mytime) }} {{ $mytime->format('h:i A') }}
                                 </small>
 
                             </div>

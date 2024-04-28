@@ -153,7 +153,14 @@
     "Dashboard": "Panel de Control",
     "Return to Dashboard": "Regresar a Panel",
     "The provided password does not match your current password.": "La contraseña proporcionada no coincide con su contraseña actual.",
-    "Saved.": "Guardado."
+    "Saved.": "Guardado.",
+    "Online": "En línea",
+    "Settings": "Configuraciones",
+    "About": "Acerca de",
+    "Profile Settings": "Config. Perfil",
+    "Manage Account": "Administrar Cuenta",
+    "Edit Profile": "Editar Perfil",
+    "Message": "Mensaje"
     
 
 

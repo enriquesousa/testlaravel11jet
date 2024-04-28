@@ -303,37 +303,51 @@
                 <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     
-                    {{-- <img class="" src="{{ asset('backend/assets/images/flags/us.jpg') }}" alt="Header Language"
-                        height="16"> --}}
-                    <img class="" src="{{ asset('backend/assets/images/flags/Mexico.png') }}" alt="Header Language"
-                        height="16">
+                    @if (App::getLocale() == 'en')
+                        <img class="" src="{{ asset('backend/assets/images/flags/us.jpg') }}" alt="Header Language" height="16">    
+                    @else
+                        <img class="" src="{{ asset('backend/assets/images/flags/mexico.png') }}" alt="Header Language" height="16">    
+                    @endif
                     
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="{{ route('admin.change.locale.us') }}" class="dropdown-item notify-item">
+                        <img src="{{ asset('backend/assets/images/flags/us.jpg') }}" alt="user-image"
+                            class="me-1" height="12"> <span class="align-middle">English</span>
+                    </a>
+
+                    <!-- item-->
+                    {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <img src="{{ asset('backend/assets/images/flags/spain.jpg') }}" alt="user-image"
                             class="me-1" height="12"> <span class="align-middle">Spanish</span>
+                    </a> --}}
+
+                    <!-- item-->
+                    <a href="{{ route('admin.change.locale.es') }}" class="dropdown-item notify-item">
+                        <img src="{{ asset('backend/assets/images/flags/mexico.png') }}" alt="user-image"
+                            class="me-1" height="12"> <span class="align-middle">Español</span>
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <img src="{{ asset('backend/assets/images/flags/germany.jpg') }}" alt="user-image"
                             class="me-1" height="12"> <span class="align-middle">German</span>
-                    </a>
+                    </a> --}}
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <img src="{{ asset('backend/assets/images/flags/italy.jpg') }}" alt="user-image"
                             class="me-1" height="12"> <span class="align-middle">Italian</span>
-                    </a>
+                    </a> --}}
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <img src="{{ asset('backend/assets/images/flags/russia.jpg') }}" alt="user-image"
                             class="me-1" height="12"> <span class="align-middle">Russian</span>
-                    </a>
+                    </a> --}}
+
                 </div>
             </div>
 
@@ -449,7 +463,7 @@
             
             <!-- Perfil de usuario -->
             <div class="dropdown d-inline-block user-dropdown">
-                
+
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user"
@@ -463,25 +477,34 @@
                     {{-- Perfil --}}
                     <a href="{{ route('admin.view.profile') }}" class="dropdown-item">
                         <i class="ri-user-line align-middle me-1"></i>
-                         Perfil
+                        {{ __('Profile') }}
                     </a>
 
                     {{-- Perfil Admin Todo con ayuda de x blade Jetstream --}}
                     <a href="{{ route('profile.show') }}" class="dropdown-item">
-                        <i class="ri-user-line align-middle me-1"></i>
-                         Editar Perfil
+                        <i class="ri-settings-2-line align-middle me-1"></i>
+                        {{ __('Profile Settings') }} 
                     </a>
 
                     {{-- Cambiar contraseña --}}
                     {{-- {{ route('admin.change.password') }} --}}
-                    <a class="dropdown-item" href=""><i class="ri-lock-unlock-line align-middle me-1"></i> Cambiar contraseña</a>
+                    {{-- <a class="dropdown-item" href="">
+                        <i class="ri-lock-unlock-line align-middle me-1"></i>
+                         Cambiar contraseña
+                    </a> --}}
 
                     {{-- Settings --}}
-                    {{-- <a class="dropdown-item d-block" href="#">
+                    {{-- <a href="#" class="dropdown-item d-block">
                             <span class="badge bg-success float-end mt-1">11</span>
                             <i class="ri-settings-2-line align-middle me-1"></i>
-                            Settings
+                            {{ __('Settings') }}
                     </a> --}}
+
+                    {{-- About --}}
+                    <a href="{{ route('dashboard') }}" class="dropdown-item d-block">
+                        <i class="ri-information-line"></i>
+                        {{ __('About') }}
+                </a>
 
                     {{-- Lock Screen --}}
                     {{-- <a class="dropdown-item" href="#">
@@ -494,7 +517,8 @@
                     {{-- Logout --}}
                     <a href="{{ route('admin.logout') }}" class="dropdown-item text-danger">
                         <i class="ri-shut-down-line align-middle me-1 text-danger"></i>
-                        Salir
+                        {{-- Salir --}}
+                        {{ __('Logout') }}
                     </a>
 
                 </div>

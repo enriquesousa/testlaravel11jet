@@ -20,7 +20,7 @@ Route::get('/', function () {
 // Dos Paneles de Entrada (Dashboard normal y Dashboard de Control para Administradores)
 Route::middleware([
     'auth:sanctum',
-    config('jetstream.auth_session'),
+    config('jetstream.auth_session'),   
     'verified',
     ])->group(function () {
 
@@ -63,6 +63,10 @@ Route::middleware('auth')->group(function () {
     
         // Route::get('/admin/change/password', 'ChangePassword')->name('admin.change.password');
         // Route::post('/admin/update/password', 'UpdatePassword')->name('admin.update.password');
+
+        Route::get('/admin/change/locale/us', 'AdminChangeLocaleUS')->name('admin.change.locale.us');
+        Route::get('/admin/change/locale/es', 'AdminChangeLocaleES')->name('admin.change.locale.es');
+
     });
 
 
