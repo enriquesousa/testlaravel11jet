@@ -9,13 +9,11 @@
             {{-- Columna 1 --}}
             <div class="col-lg-4">
                 <div class="card">
-
                     <center>
 
                         {{-- Imagen de Admin --}}
                         <img class="rounded-circle avatar-xl mt-4" 
-                            src="{{ (!empty($adminData->profile_image) ? url('upload/admin_images/'.$adminData->profile_image) : url('upload/no_image.jpg')) }}" 
-                            data-holder-rendered="true">
+                            src="{{ (!empty($adminData->profile_photo_path) ? url($adminData->profile_photo_path) : url('upload/no_image.jpg')) }}" data-holder-rendered="true">
 
                     </center>
 
@@ -30,7 +28,7 @@
                             <p class="text-muted">{{ $adminData->email }}</p>
                             
                             {{-- {{ route('admin.edit.profile') }} --}}
-                            <a href="">
+                            <a href="{{ route('profile.show') }}">
                                 <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Editar Perfil</button>
                             </a>
 
@@ -50,7 +48,6 @@
                         </center>
 
                     </div>
-                    
                 </div>
             </div>
             

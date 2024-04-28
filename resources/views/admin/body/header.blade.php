@@ -449,20 +449,27 @@
             
             <!-- Perfil de usuario -->
             <div class="dropdown d-inline-block user-dropdown">
+                
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user"
-                        src="{{ (!empty($adminData->profile_image) ? url('upload/admin_images/'.$adminData->profile_image) : url('upload/no_image.jpg')) }}" alt="Header Avatar">
+                        src="{{ (!empty($adminData->profile_photo_path) ? url($adminData->profile_photo_path) : url('upload/no_image.jpg')) }}" alt="Header Avatar">
                     <span class="d-none d-xl-inline-block ms-1">{{ $adminData->username }}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
+
                 <div class="dropdown-menu dropdown-menu-end">
                     
                     {{-- Perfil --}}
-                    {{-- {{ route('admin.view.profile') }} --}}
                     <a href="{{ route('admin.view.profile') }}" class="dropdown-item">
                         <i class="ri-user-line align-middle me-1"></i>
                          Perfil
+                    </a>
+
+                    {{-- Perfil Admin Todo con ayuda de x blade Jetstream --}}
+                    <a href="{{ route('profile.show') }}" class="dropdown-item">
+                        <i class="ri-user-line align-middle me-1"></i>
+                         Editar Perfil
                     </a>
 
                     {{-- Cambiar contraseña --}}

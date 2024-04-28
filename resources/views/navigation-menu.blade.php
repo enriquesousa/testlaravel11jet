@@ -3,10 +3,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
+                
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                        {{-- <x-application-mark class="block h-9 w-auto" /> --}}
+                        <img src="{{ asset('logo/TJWeblogo.png') }}" alt="" width="65px">
                     </a>
                 </div>
 
@@ -114,11 +116,17 @@
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
+                                <x-dropdown-link href="{{ route('dashboard') }}">
+                                        {{ __('Return to Dashboard') }}
+                                </x-dropdown-link>
+
                                 <x-dropdown-link href="{{ route('logout') }}"
                                          @click.prevent="$root.submit();">
                                     {{ __('Log Out') }}
                                 </x-dropdown-link>
+
                             </form>
+
                         </x-slot>
                     </x-dropdown>
                 </div>
@@ -133,6 +141,7 @@
                     </svg>
                 </button>
             </div>
+
         </div>
     </div>
 

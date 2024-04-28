@@ -148,7 +148,13 @@
     "Use an authentication code": "Usar Código de Autenticación",
     "Whoops! Something went wrong.": "¡Vaya! Algo salio mal.",
     "The provided two factor recovery code was invalid.": "El código de recuperación de dos factores proporcionado no es válido.",
-    "This is a secure area of the application. Please confirm your password before continuing.": "Estas en una zona segura de la aplicación. Por favor confirme su contraseña antes de continuar."
+    "This is a secure area of the application. Please confirm your password before continuing.": "Estas en una zona segura de la aplicación. Por favor confirme su contraseña antes de continuar.",
+
+    "Dashboard": "Panel de Control",
+    "Return to Dashboard": "Regresar a Panel",
+    "The provided password does not match your current password.": "La contraseña proporcionada no coincide con su contraseña actual.",
+    "Saved.": "Guardado."
+    
 
 
 }
