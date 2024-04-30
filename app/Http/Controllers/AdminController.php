@@ -35,50 +35,6 @@ class AdminController extends Controller
         return view('admin.admin_profile_view', compact('adminData'));
     }
 
-    // AdminChangeLocaleUS
-    public function AdminChangeLocaleUS()
-    {
-
-        // Change env variable
-        $path = base_path('.env');
-        if (file_exists($path)) {
-            file_put_contents($path, str_replace(
-                'APP_LOCALE=es',
-                'APP_LOCALE=en',
-                file_get_contents($path)
-            ));
-        }
-
-        $notification = array(
-            'message' => 'Language has been changed to ENGLISH',
-            'alert-type' => 'success'
-        );
-
-        return redirect()->back()->with($notification);
-    }
-
-    // AdminChangeLocaleES
-    public function AdminChangeLocaleES()
-    {
-
-        // Change env variable
-        $path = base_path('.env');
-        if (file_exists($path)) {
-            file_put_contents($path, str_replace(
-                'APP_LOCALE=en',
-                'APP_LOCALE=es',
-                file_get_contents($path)
-            ));
-        }
-
-        $notification = array(
-            'message' => 'El lenguaje ha sido cambiado a ESPAÑOL',
-            'alert-type' => 'success'
-        );
-
-        return redirect()->back()->with($notification);
-    }
-
     // EditProfile
     public function EditProfile()
     {
@@ -88,21 +44,17 @@ class AdminController extends Controller
         return view('admin.admin_profile_edit', compact('editData', 'adminData'));
     }
 
-    // EditProfile
-    public function EditProfileJet()
-    {
-        return view('admin.admin_profile_jet_edit');
-    }
-
     // ChangePassword
-    public function ChangePassword(){
+    public function ChangePassword()
+    {
         $id = Auth::user()->id;
         $adminData = User::findOrFail($id);
         return view('admin.admin_change_password', compact('adminData'));
     }
 
     // UpdatePassword
-    public function UpdatePassword(Request $request){
+    public function UpdatePassword(Request $request)
+    {
 
         $validateData = $request->validate([
             'antiguaContraseña' => 'required',
@@ -123,23 +75,15 @@ class AdminController extends Controller
                 'alert-type' => 'success'
             );
             return redirect()->back()->with($notification);
-
-        }else{
+        } else {
 
             // session()->flash('message', 'La antigua contraseña no coincide');
             $notification = array(
-                'message' => 'La antigua contraseña no coincide', 
+                'message' => 'La antigua contraseña no coincide',
                 'alert-type' => 'error'
             );
             return redirect()->back()->with($notification);
         }
-
-    }
-
-    // ChangePassword
-    public function ChangePasswordJet()
-    {
-        return view('admin.admin_change_password_jet');
     }
 
     // EditProfilePhoto
@@ -211,23 +155,100 @@ class AdminController extends Controller
                 'message' => 'Foto de Perfil actualizada con éxito',
                 'alert-type' => 'success'
             );
-
-        }else{
+        } else {
 
             // toastr notification
             $notification = array(
                 'message' => 'NO hay Foto para actualizar',
                 'alert-type' => 'warning'
             );
-            
         }
 
         return redirect()->route('admin.view.profile')->with($notification);
+    }
+    
 
+    /**************
+    *   Profile Jet
+    ***************/
+
+    // ViewProfileJet
+    public function ViewProfileJet(){
+        return view('admin.admin_profile_jet_view');
+    }
+
+    // EditProfile
+    public function EditProfileJet(){
+        return view('admin.admin_profile_jet_edit');
+    }
+
+    // ChangePassword
+    public function ChangePasswordJet(){
+        return view('admin.admin_change_password_jet');
+    }
+
+    // AdminAuth2FAJet
+    public function AdminAuth2FAJet(){
+        return view('admin.admin_auth_2fa_jet');
+    }
+
+    // AdminBrowserSessionJet
+    public function AdminBrowserSessionJet(){
+       return view('admin.admin_browser_session_jet');
+    }
+
+    // AdminDeleteAccountJet
+    public function AdminDeleteAccountJet(){
+       return view('admin.admin_delete_account_jet');
     }
 
 
+    /***************************************
+    *   Cambiar de idioma ENGLISH - ESPAÑOL
+    *****************************************/
 
+    // AdminChangeLocaleUS
+    public function AdminChangeLocaleUS()
+    {
 
+        // Change env variable
+        $path = base_path('.env');
+        if (file_exists($path)) {
+            file_put_contents($path, str_replace(
+                'APP_LOCALE=es',
+                'APP_LOCALE=en',
+                file_get_contents($path)
+            ));
+        }
+
+        $notification = array(
+            'message' => 'Language has been changed to ENGLISH',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+    // AdminChangeLocaleES
+    public function AdminChangeLocaleES()
+    {
+
+        // Change env variable
+        $path = base_path('.env');
+        if (file_exists($path)) {
+            file_put_contents($path, str_replace(
+                'APP_LOCALE=en',
+                'APP_LOCALE=es',
+                file_get_contents($path)
+            ));
+        }
+
+        $notification = array(
+            'message' => 'El lenguaje ha sido cambiado a ESPAÑOL',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
 
 }

@@ -515,11 +515,29 @@
                         {{ __('Change Password Jet') }}
                     </a> --}}
 
-                    {{-- Perfil Admin Todo con ayuda de x blade Jetstream --}}
-                    {{-- <a href="{{ route('profile.show') }}" class="dropdown-item">
+                    {{-- Perfil Admin Todo con ayuda de x blade Jetstream, {{ route('profile.show') }} --}}
+                    <a href="{{ route('admin.view.profile.jet') }}" class="dropdown-item">
                         <i class="ri-settings-2-line align-middle me-1"></i>
                         {{ __('Profile Settings Jet') }} 
-                    </a> --}}
+                    </a>
+
+                    {{-- Perfil Jet 2FA --}}
+                    <a href="{{ route('admin.auth2fa.jet') }}" class="dropdown-item">
+                        <i class="ri-lock-unlock-line align-middle me-1"></i>
+                        {{ __('Two Factor Authentication') }} 
+                    </a>
+
+                    {{-- Browser Session Jet --}}
+                    <a href="{{ route('admin.browser.session.jet') }}" class="dropdown-item">
+                        <i class="ri-lock-unlock-line align-middle me-1"></i>
+                        {{ __('Browser Sessions') }} 
+                    </a>
+
+                    {{-- Delete Account Jet --}}
+                    <a href="{{ route('admin.delete.account.jet') }}" class="dropdown-item">
+                        <i class="ri-lock-unlock-line align-middle me-1"></i>
+                        {{ __('Delete Account') }} 
+                    </a>
 
                     
 
