@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    
+
     // AdminDestroy
-    public function AdminDestroy(Request $request){
+    public function AdminDestroy(Request $request)
+    {
 
         Auth::guard('web')->logout();
         $request->session()->invalidate();
@@ -23,18 +24,20 @@ class AdminController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect('/login')->with($notification); 
+        return redirect('/login')->with($notification);
     }
 
     // AdminProfile
-    public function ViewProfile(){
+    public function ViewProfile()
+    {
         $id = Auth::user()->id;
         $adminData = User::findOrFail($id);
         return view('admin.admin_profile_view', compact('adminData'));
     }
 
     // AdminChangeLocaleUS
-    public function AdminChangeLocaleUS(){
+    public function AdminChangeLocaleUS()
+    {
 
         // Change env variable
         $path = base_path('.env');
@@ -52,11 +55,11 @@ class AdminController extends Controller
         );
 
         return redirect()->back()->with($notification);
-
     }
 
     // AdminChangeLocaleES
-    public function AdminChangeLocaleES(){
+    public function AdminChangeLocaleES()
+    {
 
         // Change env variable
         $path = base_path('.env');
@@ -74,19 +77,20 @@ class AdminController extends Controller
         );
 
         return redirect()->back()->with($notification);
-
     }
 
     // EditProfile
-    public function EditProfile(){
+    public function EditProfile()
+    {
         $id = Auth::user()->id;
         $editData = User::findOrFail($id);
         return view('admin.admin_profile_edit', compact('editData'));
     }
 
     // EditProfile
-    public function EditProfileJet(){
-       return view('admin.admin_profile_jet_edit');
+    public function EditProfileJet()
+    {
+        return view('admin.admin_profile_jet_edit');
     }
 
     // ChangePassword
@@ -94,10 +98,119 @@ class AdminController extends Controller
         return view('admin.admin_change_password');
     }
 
-    // EditProfilePhoto
-    public function EditProfilePhoto(){
-       return view('admin.admin_profile_edit_photo');
+    // UpdatePassword
+    public function UpdatePassword(Request $request){
+
+        $validateData = $request->validate([
+            'antiguaContraseña' => 'required',
+            'nuevaContraseña' => 'required',
+            'confirmarContraseña' => 'required|same:nuevaContraseña',
+        ]);
+
+
+        $hashedPassword = Auth::user()->password;
+        if (Hash::check($request->antiguaContraseña, $hashedPassword)) {
+            $user = User::find(Auth::id());
+            $user->password = Hash::make($request->nuevaContraseña);
+            $user->save();
+
+            session()->flash('message', 'Contraseña actualizada correctamente');
+            return redirect()->back();
+
+        }else{
+
+            session()->flash('message', 'La antigua contraseña no coincide');
+            return redirect()->back();
+        }
+
     }
+
+    // ChangePassword
+    public function ChangePasswordJet()
+    {
+        return view('admin.admin_change_password_jet');
+    }
+
+    // EditProfilePhoto
+    public function EditProfilePhoto()
+    {
+        return view('admin.admin_profile_edit_photo');
+    }
+
+    // StoreProfile
+    public function StoreProfile(Request $request)
+    {
+
+        // Para saber que usuario esta logueado
+        $id = Auth::user()->id;
+        $data = User::find($id);
+
+        $data->name = $request->name;
+        $data->username = $request->username;
+        $data->email = $request->email;
+
+        // actualizar imagen
+        if ($request->file('profile_image')) {
+            $file = $request->file('profile_image');
+            @unlink(public_path('upload/admin_images/' . $data->profile_image)); // para borrar si ya hay imagen en el directorio
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/admin_images'), $filename);
+            $data['profile_image'] = $filename;
+        }
+
+        $data->save();
+
+        // return redirect()->route('admin.view.profile')->with('success', 'Perfil actualizado con éxito');
+
+        // toastr notification
+        $notification = array(
+            'message' => 'Perfil actualizado con éxito',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('admin.view.profile')->with($notification);
+    }
+
+    // StorePhoto
+    public function StorePhoto(Request $request)
+    {
+
+        // Para saber que usuario esta logueado
+        $id = Auth::user()->id;
+        $data = User::find($id);
+
+        // dd($data);
+
+        // actualizar imagen
+        if ($request->file('profile_image')) {
+            $file = $request->file('profile_image');
+            @unlink(public_path('upload/admin_images/' . $data->profile_image)); // para borrar si ya hay imagen en el directorio
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/admin_images'), $filename);
+            $data['profile_image'] = $filename;
+
+            $data->save();
+
+            // toastr notification
+            $notification = array(
+                'message' => 'Foto de Perfil actualizada con éxito',
+                'alert-type' => 'success'
+            );
+
+        }else{
+
+            // toastr notification
+            $notification = array(
+                'message' => 'NO hay Foto para actualizar',
+                'alert-type' => 'warning'
+            );
+            
+        }
+
+        return redirect()->route('admin.view.profile')->with($notification);
+
+    }
+
 
 
 

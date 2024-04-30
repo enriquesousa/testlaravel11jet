@@ -16,13 +16,14 @@
 
                             <h4 class="card-title">Editar Perfil</h4>
 
-                            {{-- {{ route('admin.store.profile') }} --}}
-                            <form method="POST" action="" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('admin.store.profile') }}" enctype="multipart/form-data">
                                 @csrf
 
                                 {{-- Nombre --}}
                                 <div class="row mb-3">
-                                    <label for="name" class="col-sm-2 col-form-label">{{ __('Name') }}</label>
+                                    <label for="name" class="col-sm-2 col-form-label">
+                                        {{ __('Name') }}
+                                    </label>
                                     <div class="col-sm-10">
                                         <input class="form-control" name="name" type="text" id="name"
                                             value="{{ $editData->name }}">
@@ -31,7 +32,9 @@
 
                                 {{-- Username --}}
                                 <div class="row mb-3">
-                                    <label for="username" class="col-sm-2 col-form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Nombre de usuario una sola palabra y en minúscula">{{ __('Username Short') }}</label>
+                                    <label for="username" class="col-sm-2 col-form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Nombre de usuario una sola palabra y en minúscula">
+                                        {{ __('Username Short') }}
+                                    </label>
                                     <div class="col-sm-10">
                                         <input class="form-control" name="username" type="text" id="username"
                                             value="{{ $editData->username }}">
@@ -40,16 +43,18 @@
 
                                 {{-- Teléfono --}}
                                 <div class="row mb-3">
-                                    <label for="phone" class="col-sm-2 col-form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Acepta solo números">{{ __('Telephone') }}</label>
+                                    <label for="phone" class="col-sm-2 col-form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Acepta solo números">
+                                        {{ __('Telephone') }}
+                                    </label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" name="username" type="number" id="username"
+                                        <input class="form-control" name="phone" type="number" id="phone"
                                             value="{{ $editData->phone }}">
                                     </div>
                                 </div>
 
                                 {{-- Email --}}
                                 <div class="row mb-3">
-                                    <label for="email" class="col-sm-2 col-form-label">Correo Electrónico</label>
+                                    <label for="email" class="col-sm-2 col-form-label">{{ __('Email') }}</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" name="email" type="text" id="email"
                                             value="{{ $editData->email }}">
@@ -59,7 +64,9 @@
 
                                 {{-- Seleccionar Imagen --}}
                                 <div class="row mb-3">
-                                    <label for="email" class="col-sm-2 col-form-label">Seleccionar Imagen</label>
+                                    <label for="email" class="col-sm-2 col-form-label">
+                                        {{ __('Select Image') }}
+                                    </label>
                                     <div class="col-sm-10">
                                         <input class="form-control" name="profile_image" type="file" id="image">
                                     </div>

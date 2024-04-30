@@ -485,30 +485,35 @@
                         {{ __('Profile') }}
                     </a>
 
-                    {{-- Editar Foto --}}
-                    <a href="{{ route('admin.edit.photo') }}" class="dropdown-item">
-                        <i class="ri-user-line align-middle me-1"></i>
-                        {{ __('Edit Photo') }}
-                    </a>
-
                     {{-- Editar Perfil --}}
                     <a href="{{ route('admin.edit.profile') }}" class="dropdown-item">
                         <i class="ri-user-line align-middle me-1"></i>
                         {{ __('Edit Profile') }}
                     </a>
 
-                    {{-- Editar Perfil Jet --}}
-                    <a href="{{ route('admin.edit.jet.profile') }}" class="dropdown-item">
+                    {{-- Editar Foto --}}
+                    <a href="{{ route('admin.edit.photo') }}" class="dropdown-item">
                         <i class="ri-user-line align-middle me-1"></i>
-                        {{ __('Edit Profile Jet') }}
+                        {{ __('Edit Photo') }}
                     </a>
 
                     {{-- Cambiar contraseña --}}
-                    {{-- {{ route('admin.change.password') }} --}}
                     <a href="{{ route('admin.change.password') }}" class="dropdown-item">
                         <i class="ri-lock-unlock-line align-middle me-1"></i>
-                        {{ __('Change Password Jet') }}
+                        {{ __('Change Password') }}
                     </a>
+
+                    {{-- Editar Perfil Jet --}}
+                    {{-- <a href="{{ route('admin.edit.jet.profile') }}" class="dropdown-item">
+                        <i class="ri-user-line align-middle me-1"></i>
+                        {{ __('Edit Profile Jet') }}
+                    </a> --}}
+
+                    {{-- Cambiar contraseña con JET --}}
+                    {{-- <a href="{{ route('admin.change.password.jet') }}" class="dropdown-item">
+                        <i class="ri-lock-unlock-line align-middle me-1"></i>
+                        {{ __('Change Password Jet') }}
+                    </a> --}}
 
                     {{-- Perfil Admin Todo con ayuda de x blade Jetstream --}}
                     <a href="{{ route('profile.show') }}" class="dropdown-item">

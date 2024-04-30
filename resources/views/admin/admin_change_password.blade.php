@@ -1,21 +1,86 @@
 @extends('admin.admin_master')
 @section('admin')
 
+
     <div class="page-content">
         <div class="container-fluid">
+
             <div class="row">
-        
-                <x-app-layout>
-                    @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-                        <div class="mt-10 sm:mt-0">
-                            @livewire('profile.update-password-form')
+
+                {{-- Columna 1 --}}
+                <div class="col-lg-6">
+                    <div class="card">
+                        
+                        <div class="card-body">
+
+                            <h4 class="mb-4">{{ __('Change Password') }}</h4>
+
+
+                            {{-- Si hay errores de validación --}}
+                            @if (count($errors) > 0)
+                                @foreach ($errors->all() as $error)
+
+                                    {{-- <p class="alert alert-danger alert-dismissible fade show">{{ $error }}</p> --}}
+
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        {{ $error }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+
+                                @endforeach
+                            @endif
+
+
+                            <form method="POST" action="{{ route('admin.update.password') }}">
+                                @csrf
+
+                                {{-- Contraseña Antigua --}}
+                                <div class="row mb-3">
+                                    <label for="name" class="col-sm-2 col-form-label">
+                                        {{ __('Current Password') }}
+                                    </label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" name="antiguaContraseña" type="password" id="antiguaContraseña">
+                                    </div>
+                                </div>
+
+                                {{-- Contraseña Nueva --}}
+                                <div class="row mb-3">
+                                    <label for="name" class="col-sm-2 col-form-label">
+                                        {{ __('New Password') }}
+                                    </label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" name="nuevaContraseña" type="password" id="nuevaContraseña">
+                                    </div>
+                                </div>
+
+                                {{-- Confirmar Contraseña --}}
+                                <div class="row mb-3">
+                                    <label for="name" class="col-sm-2 col-form-label">
+                                        {{ __('Confirm Password') }}
+                                    </label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" name="confirmarContraseña" type="password" id="confirmarContraseña">
+                                    </div>
+                                </div>
+
+                              
+
+                                {{-- Botón --}}
+                                <input type="submit" class="btn btn-info waves-effect waves-light" value="{{ __('Update Password') }}">
+
+                            </form>
+
                         </div>
-                        <x-section-border />
-                    @endif
-                </x-app-layout>
+                    </div>
+                </div>
+
+
 
             </div>
+
         </div>
     </div>
+
     
 @endsection

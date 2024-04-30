@@ -12,8 +12,11 @@
                     <center>
 
                         {{-- Imagen de Admin --}}
-                        <img class="rounded-circle avatar-xl mt-4" 
-                            src="{{ (!empty($adminData->profile_photo_path) ? url($adminData->profile_photo_path) : url('upload/no_image.jpg')) }}" data-holder-rendered="true">
+                        {{-- <img class="rounded-circle avatar-xl mt-4" 
+                            src="{{ (!empty($adminData->profile_photo_path) ? url($adminData->profile_photo_path) : url('upload/no_image.jpg')) }}" data-holder-rendered="true"> --}}
+                        <br>
+                        <img src="{{ !empty($adminData->profile_image) ? url('upload/admin_images/' . $adminData->profile_image) : url('upload/no_image.jpg') }}"
+                            alt="" class="avatar-md rounded-circle">
 
                     </center>
 
@@ -27,8 +30,8 @@
                             <h4 class="mb-0">{{ $adminData->name }}</h4>
                             <p class="text-muted">{{ $adminData->email }}</p>
                             
-                            {{-- {{ route('admin.edit.profile') }} --}}
-                            <a href="{{ route('admin.edit.jet.profile') }}">
+                            {{-- {{ route('admin.edit.jet.profile') }} --}}
+                            <a href="{{ route('admin.edit.profile') }}">
                                 <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">
                                     {{-- Editar Perfil --}}
                                     {{ __('Edit Profile') }}

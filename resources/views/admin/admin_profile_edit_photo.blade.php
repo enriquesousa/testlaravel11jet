@@ -15,8 +15,7 @@
 
                             <h4 class="card-title">Editar Foto</h4>
 
-                            {{-- {{ route('admin.store.profile') }} --}}
-                            <form method="POST" action="" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('admin.store.photo') }}" enctype="multipart/form-data">
                                 @csrf
 
 

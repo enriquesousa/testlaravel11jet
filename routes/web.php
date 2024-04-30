@@ -62,11 +62,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/admin/edit/profile', 'EditProfile')->name('admin.edit.profile');
         Route::get('/admin/edit/profile/jet', 'EditProfileJet')->name('admin.edit.jet.profile');
         Route::get('/admin/edit/photo', 'EditProfilePhoto')->name('admin.edit.photo');
-
-        // Route::post('/admin/store/profile', 'StoreProfile')->name('admin.store.profile');
+        Route::post('/admin/store/photo', 'StorePhoto')->name('admin.store.photo');
+        Route::post('/admin/store/profile', 'StoreProfile')->name('admin.store.profile');
     
+        Route::get('/admin/change/password/jet', 'ChangePasswordJet')->name('admin.change.password.jet');
         Route::get('/admin/change/password', 'ChangePassword')->name('admin.change.password');
-        // Route::post('/admin/update/password', 'UpdatePassword')->name('admin.update.password');
+        Route::post('/admin/update/password', 'UpdatePassword')->name('admin.update.password');
 
         Route::get('/admin/change/locale/us', 'AdminChangeLocaleUS')->name('admin.change.locale.us');
         Route::get('/admin/change/locale/es', 'AdminChangeLocaleES')->name('admin.change.locale.es');
