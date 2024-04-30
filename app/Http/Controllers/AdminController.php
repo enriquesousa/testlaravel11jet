@@ -84,7 +84,8 @@ class AdminController extends Controller
     {
         $id = Auth::user()->id;
         $editData = User::findOrFail($id);
-        return view('admin.admin_profile_edit', compact('editData'));
+        $adminData = User::findOrFail($id);
+        return view('admin.admin_profile_edit', compact('editData', 'adminData'));
     }
 
     // EditProfile
@@ -95,7 +96,9 @@ class AdminController extends Controller
 
     // ChangePassword
     public function ChangePassword(){
-        return view('admin.admin_change_password');
+        $id = Auth::user()->id;
+        $adminData = User::findOrFail($id);
+        return view('admin.admin_change_password', compact('adminData'));
     }
 
     // UpdatePassword
@@ -103,7 +106,7 @@ class AdminController extends Controller
 
         $validateData = $request->validate([
             'antiguaContraseña' => 'required',
-            'nuevaContraseña' => 'required',
+            'nuevaContraseña' => 'required|min:8',
             'confirmarContraseña' => 'required|same:nuevaContraseña',
         ]);
 
@@ -114,13 +117,21 @@ class AdminController extends Controller
             $user->password = Hash::make($request->nuevaContraseña);
             $user->save();
 
-            session()->flash('message', 'Contraseña actualizada correctamente');
-            return redirect()->back();
+            // session()->flash('message', 'Contraseña actualizada correctamente');
+            $notification = array(
+                'message' => 'Contraseña actualizada correctamente',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
 
         }else{
 
-            session()->flash('message', 'La antigua contraseña no coincide');
-            return redirect()->back();
+            // session()->flash('message', 'La antigua contraseña no coincide');
+            $notification = array(
+                'message' => 'La antigua contraseña no coincide', 
+                'alert-type' => 'error'
+            );
+            return redirect()->back()->with($notification);
         }
 
     }
@@ -134,7 +145,10 @@ class AdminController extends Controller
     // EditProfilePhoto
     public function EditProfilePhoto()
     {
-        return view('admin.admin_profile_edit_photo');
+        $id = Auth::user()->id;
+        $editData = User::findOrFail($id);
+        $adminData = User::findOrFail($id);
+        return view('admin.admin_profile_edit_photo', compact('editData', 'adminData'));
     }
 
     // StoreProfile
@@ -148,6 +162,7 @@ class AdminController extends Controller
         $data->name = $request->name;
         $data->username = $request->username;
         $data->email = $request->email;
+        $data->phone = $request->phone;
 
         // actualizar imagen
         if ($request->file('profile_image')) {
