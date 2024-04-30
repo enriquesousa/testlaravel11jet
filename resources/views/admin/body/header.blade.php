@@ -516,10 +516,10 @@
                     </a> --}}
 
                     {{-- Perfil Admin Todo con ayuda de x blade Jetstream --}}
-                    <a href="{{ route('profile.show') }}" class="dropdown-item">
+                    {{-- <a href="{{ route('profile.show') }}" class="dropdown-item">
                         <i class="ri-settings-2-line align-middle me-1"></i>
                         {{ __('Profile Settings Jet') }} 
-                    </a>
+                    </a> --}}
 
                     
 

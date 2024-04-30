@@ -157,4 +157,8 @@ return [
         ]),
     ],
 
+
+    /* Para dar una ruta personalizada (Prefix) a las rutas de Jetstream */
+    'path' => '9876',
+
 ];

@@ -78,4 +78,7 @@ return [
 
     'profile_photo_disk' => 'public',
 
+    /* Para dar una ruta personalizada (Prefix) a las rutas de Jetstream */
+    'path' => '9876',
+
 ];
