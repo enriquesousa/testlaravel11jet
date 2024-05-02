@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Mis controladores
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\ProviderController;
 
 
 /*
@@ -14,6 +15,13 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+
+// *********
+// Socialite
+// *********
+Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
+Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback']);
 
 
 

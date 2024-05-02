@@ -25,6 +25,16 @@
     <!-- toastr toster-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
+    {{-- CSS en vista blade, lo voy a usar para deshabilitar los a tag de social login que no voy a usar --}}
+    <style type="text/css">
+        a.disabled {
+            /* Make the disabled links grayish*/
+            color: gray;
+            /* And disable the pointer events */
+            pointer-events: none;
+        }
+    </style>
+
 </head>
 
 <body class="auth-body-bg">
@@ -42,13 +52,14 @@
                         </div>
                     </div>
 
-                    <h4 class="text-muted text-center font-size-18"><b>{{ __('Login') }}</b></h4>
+                    {{-- <h4 class="text-muted text-center font-size-18"><b>{{ __('Login') }}</b></h4> --}}
+                    <h5 class="mt-1 text-muted text-center">{{ __('Login') }}</h5>
 
                     <div class="p-3">
 
-                        <form class="form-horizontal mt-3" method="POST" action="{{ route('login') }}">
+                        <form class="form-horizontal mt-1" method="POST" action="{{ route('login') }}">
                             @csrf
-                            
+
                             {{-- <input type="hidden" name="username" id="" value="username_test">
                             <input type="hidden" name="phone" id="" value="phone_test"> --}}
 
@@ -68,7 +79,8 @@
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('email') is-invalid @enderror" id="email"
-                                        type="text" name="email" required="" placeholder="{{ __('Email/Username/Phone') }}">
+                                        type="text" name="email" required=""
+                                        placeholder="{{ __('Email/Username/Phone') }}">
                                     @error('email')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -91,7 +103,8 @@
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('password') is-invalid @enderror" id="password"
-                                        type="password" name="password" required="" placeholder="{{ __('Password') }}">
+                                        type="password" name="password" required=""
+                                        placeholder="{{ __('Password') }}">
                                     @error('password')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -103,8 +116,10 @@
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <div class="custom-control custom-checkbox">
-                                        <input id="remember_me" type="checkbox" name="remember" class="custom-control-input">
-                                        <label class="form-label ms-1" for="customCheck1">{{ __('Remember me') }}</label>
+                                        <input id="remember_me" type="checkbox" name="remember"
+                                            class="custom-control-input">
+                                        <label class="form-label ms-1"
+                                            for="customCheck1">{{ __('Remember me') }}</label>
                                     </div>
                                 </div>
                             </div>
@@ -118,6 +133,7 @@
                                 </div>
                             </div>
 
+
                             {{-- ¿Olvidaste tu contraseña? y Crear una cuenta --}}
                             <div class="form-group mb-0 row mt-2">
                                 <div class="col-sm-7 mt-3">
@@ -128,10 +144,66 @@
                                 </div>
                                 <div class="col-sm-5 mt-3">
                                     <a href="{{ route('register') }}" class="text-muted">
-                                        <i class="mdi mdi-account-circle"></i> 
+                                        <i class="mdi mdi-account-circle"></i>
                                         {{ __('Create an account') }}
                                     </a>
                                 </div>
+                            </div>
+
+                            <div>
+                                <hr>
+                            </div>
+
+                            {{-- Inicia sesión con Redes Sociales --}}
+                            <div class="text-center">
+                                <h5 class="mt-3 text-muted">{{ __('Or Sign in with') }}</h5>
+                                <ul class="social-list list-inline mt-3 mb-0">
+
+                                    {{-- Facebook --}}
+                                    <li class="list-inline-item">
+                                        {{-- <a href="#" class="social-list-item border-primary text-primary">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a> --}}
+                                        <a href="#" class="social-list-item border-muted text-muted disabled">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </li>
+
+                                    {{-- Google --}}
+                                    <li class="list-inline-item">
+                                        <a href="/auth/google/redirect"
+                                            class="social-list-item border-danger text-danger">
+                                            <i class="mdi mdi-google"></i>
+                                        </a>
+                                        {{-- <a href="javascript: void(0);" class="social-list-item border-muted text-muted disabled">
+                                            <i class="mdi mdi-google"></i>
+                                        </a> --}}
+                                    </li>
+
+                                    {{-- Twitter --}}
+                                    <li class="list-inline-item">
+                                        {{-- <a href="javascript: void(0);" class="social-list-item border-info text-info">
+                                            <i class="mdi mdi-twitter"></i>
+                                        </a> --}}
+                                        <a href="javascript: void(0);"
+                                            class="social-list-item border-muted text-muted disabled">
+                                            <i class="mdi mdi-twitter"></i>
+                                        </a>
+                                    </li>
+
+                                    {{-- GitHub --}}
+                                    <li class="list-inline-item">
+                                        <a href="/auth/github/redirect" 
+                                            class="social-list-item border-primary text-primary">
+                                            <i class="mdi mdi-github"></i>
+                                        </a>
+                                        {{-- <a href="javascript: void(0);"
+                                            class="social-list-item border-muted text-muted disabled">
+                                            <i class="mdi mdi-github"></i>
+                                        </a> --}}
+                                    </li>
+
+                                </ul>
                             </div>
 
                         </form>
