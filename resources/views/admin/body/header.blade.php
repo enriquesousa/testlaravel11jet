@@ -6,9 +6,10 @@
 
             <!-- LOGO -->
             <div class="navbar-brand-box">
+
                 <a href="{{ route('home') }}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('logo/TJWeb2.png') }}" alt="logo-sm" height="22">
+                        <img src="{{ asset('logo/logo.png') }}" alt="logo-sm" height="32">
                     </span>
                     <span class="logo-lg">
                         <img src="{{ asset('logo/TJWeb2-white.png') }}" alt="logo-dark" height="22">
@@ -17,12 +18,13 @@
 
                 <a href="{{ route('home') }}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('logo/TJWeb2.png') }}" alt="logo-sm-light" height="22">
+                        <img src="{{ asset('logo/logo.png') }}" alt="logo-sm-light" height="32">
                     </span>
                     <span class="logo-lg">
                         <img src="{{ asset('logo/TJWeb2-white.png') }}" alt="logo-light" height="52">
                     </span>
                 </a>
+
             </div>
 
             <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
@@ -487,13 +489,13 @@
 
                     {{-- Editar Perfil --}}
                     <a href="{{ route('admin.edit.profile') }}" class="dropdown-item">
-                        <i class="ri-user-line align-middle me-1"></i>
+                        <i class="ri-profile-line align-middle me-1"></i>
                         {{ __('Edit Profile') }}
                     </a>
 
                     {{-- Editar Foto --}}
                     <a href="{{ route('admin.edit.photo') }}" class="dropdown-item">
-                        <i class="ri-user-line align-middle me-1"></i>
+                        <i class="ri-user-5-line align-middle me-1"></i>
                         {{ __('Edit Photo') }}
                     </a>
 
@@ -529,13 +531,13 @@
 
                     {{-- Browser Session Jet --}}
                     <a href="{{ route('admin.browser.session.jet') }}" class="dropdown-item">
-                        <i class="ri-lock-unlock-line align-middle me-1"></i>
+                        <i class="ri-global-line align-middle me-1"></i>
                         {{ __('Browser Sessions') }} 
                     </a>
 
                     {{-- Delete Account Jet --}}
                     <a href="{{ route('admin.delete.account.jet') }}" class="dropdown-item">
-                        <i class="ri-lock-unlock-line align-middle me-1"></i>
+                        <i class="ri-delete-bin-5-line align-middle me-1"></i>
                         {{ __('Delete Account') }} 
                     </a>
 

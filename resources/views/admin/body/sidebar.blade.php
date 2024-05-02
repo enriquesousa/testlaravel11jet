@@ -4,11 +4,10 @@
 
         {{-- Código para poder traer datos del usuario para desplegar foto de perfil y nombre de usuario --}}
         @php
-            if (Auth::check()){
+            if (Auth::check()) {
                 $id = Auth::user()->id;
                 $adminData = App\Models\User::find($id);
-            }
-            else{
+            } else {
                 return redirect('/');
             }
         @endphp
@@ -54,7 +53,7 @@
                     </a>
                 </li>
 
-                
+
 
                 <!-- Proveedores -->
                 <li>
@@ -171,7 +170,7 @@
 
                 <!-- * REPORTES -->
                 <li class="menu-title">Reportes</li>
-                
+
                 <!-- Reporte de Inventario -->
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -203,20 +202,48 @@
                     </ul>
                 </li>
 
-                 <!-- * ROLES y PERMISOS -->
-                 <li class="menu-title">ROLES y PERMISOS</li>
+                <!-- * ROLES y PERMISOS -->
+                <li class="menu-title">ROLES y PERMISOS</li>
+                {{-- <li class="menu-title badge bg-soft-warning">
+                    ROLES y PERMISOS&nbsp;&nbsp; 
+                    <img src="{{ asset('backend/assets/icons/rolesypermisos.svg') }}" alt="" height="25">
+                </li> --}}
                 
-                 <!-- Roles y Permisos -->
-                 <li>
-                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <img src="{{ asset('backend/assets/icons/lock.svg') }}" alt="" height="20">
-                        <span>Roles y Permisos</span>
-                     </a>
-                     <ul class="sub-menu" aria-expanded="false">
-                        {{-- {{ route('all.permission') }} --}}
-                        <li><a href="">Lista Permisos</a></li>
-                     </ul>
-                 </li>
+
+                <!-- Lista -->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        {{-- <img src="{{ asset('backend/assets/icons/lock.svg') }}" alt="" height="20"> --}}
+                        <span>Lista</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="">Lista Roles y Permisos</a>
+                        </li>
+                        <li>
+                            <a href="">Lista de Roles</a>
+                        </li>
+                        <li>
+                            <a href="">Lista de Permisos</a>
+                        </li>
+                        <li>
+                            <a href="">Asignar Roles</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Asignar Roles -->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        {{-- <img src="{{ asset('backend/assets/icons/lock.svg') }}" alt="" height="20"> --}}
+                        <span>Asignar Roles</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="">Asignar</a>
+                        </li>
+                    </ul>
+                </li>
 
             </ul>
 
