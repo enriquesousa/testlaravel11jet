@@ -26,9 +26,25 @@
 
                             {{-- <h4 class="card-title">Nombre</h4> --}}
     
+                            @php
+                                $login_provider = NULL;
+                                if($adminData->provider != null){
+                                    $login_provider = $adminData->provider;
+                                }
+                            @endphp
+
                             {{-- Nombre de Admin --}}
-                            <h4 class="mb-0">{{ $adminData->name }}</h4>
+                            @if ($login_provider != null)
+                                <h4 class="mb-0">{{ $adminData->name }} ({{ $login_provider }})</h4>
+                            @else
+                                <h4 class="mb-0">{{ $adminData->name }} </h4>
+                            @endif
+                            
                             <p class="text-muted">{{ $adminData->email }}</p>
+
+                            {{-- @if ($adminData->provider != null)
+                                <p class="text-muted">{{ $adminData->provider }}</p>
+                            @endif --}}
                             
                             {{-- {{ route('admin.edit.jet.profile') }} --}}
                             <a href="{{ route('admin.edit.profile') }}">

@@ -171,8 +171,16 @@
     "Update": "Actualizar",
     "This device": "Este Dispositivo",
 
-    "Or Sign in with": "O iniciar sesión con"
-    
+    "Or Sign in with": "O iniciar sesión con",
+    "The user is already registered": "El usuario ya está registrado",
+    "A user with this email is already registered": "Un usuario con este correo electrónico ya está registrado",
+    "Or Register with Yor Favorite Social Account": "O regístrate con tu cuenta social favorita",
+    "Register with Yor Favorite Social Account": "Regístrate con tu cuenta social favorita",
+    "User not found or invalid credentials": "Usuario no encontrado o credenciales inválidas",
+    "Email verified successfully!": "Correo electrónico verificado correctamente!",
+    "Social Media Accounts": "Cuentas de Redes Sociales", 
+    "Information": "Información",
+    "Close": "Cerrar"
 
 
 }

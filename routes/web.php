@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // Mis controladores
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\ProviderController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
 /*
@@ -20,7 +21,7 @@ Route::get('/', function () {
 // *********
 // Socialite
 // *********
-Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
+Route::get('/auth/{provider}/{loginType}/redirect', [ProviderController::class, 'redirect']);
 Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback']);
 
 
@@ -28,8 +29,8 @@ Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback'])
 // Dos Paneles de Entrada (Dashboard normal y Dashboard de Control para Administradores)
 Route::middleware([
     'auth:sanctum',
-    config('jetstream.auth_session'),   
-    'verified',
+    config('jetstream.auth_session'),
+    'verified'
     ])->group(function () {
 
     // En Dashboard que es la pagina principal de inicio cuando hacemos login con Jetstream
@@ -43,6 +44,27 @@ Route::middleware([
     })->name('dashboard_admin');
 
 });
+
+
+// Email Verificación
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    
+    $notification = array(
+        'message' => __('Email verified successfully!'),
+        'alert-type' => 'success'
+    );    
+
+    return redirect('/dashboard')->with($notification);
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+
+
 
 
 /*

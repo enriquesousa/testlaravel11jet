@@ -131,9 +131,9 @@
                                     </button>
                                 </form>
 
-                                <a href="{{ route('home') }}"
+                                <a href="{{ route('dashboard') }}"
                                     class="btn w-100 btn-pink waves-effect waves-light mt-3">
-                                    {{ __('Back to Home') }}
+                                    {{ __('Dashboard') }}
                                 </a>
 
 

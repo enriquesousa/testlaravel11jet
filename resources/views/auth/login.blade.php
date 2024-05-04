@@ -171,7 +171,7 @@
 
                                     {{-- Google --}}
                                     <li class="list-inline-item">
-                                        <a href="/auth/google/redirect"
+                                        <a href="/auth/google/login/redirect"
                                             class="social-list-item border-danger text-danger">
                                             <i class="mdi mdi-google"></i>
                                         </a>
@@ -193,7 +193,7 @@
 
                                     {{-- GitHub --}}
                                     <li class="list-inline-item">
-                                        <a href="/auth/github/redirect" 
+                                        <a href="/auth/github/login/redirect" 
                                             class="social-list-item border-primary text-primary">
                                             <i class="mdi mdi-github"></i>
                                         </a>

@@ -21,6 +21,16 @@
     <!-- App Css-->
     <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 
+    {{-- CSS en vista blade, lo voy a usar para deshabilitar los a tag de social login que no voy a usar --}}
+    <style type="text/css">
+        a.disabled {
+            /* Make the disabled links grayish*/
+            color: gray;
+            /* And disable the pointer events */
+            pointer-events: none;
+        }
+    </style>
+
 </head>
 
 <body class="auth-body-bg">
@@ -53,8 +63,7 @@
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('name') is-invalid @enderror" id="name"
-                                        type="text" name="name" required="" 
-                                        placeholder="{{ __('Name') }}">
+                                        type="text" name="name" required="" placeholder="{{ __('Name') }}">
                                     @error('name')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -89,8 +98,7 @@
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('email') is-invalid @enderror" id="email"
-                                        type="email" name="email" required="" 
-                                        placeholder="{{ __('Email') }}">
+                                        type="email" name="email" required="" placeholder="{{ __('Email') }}">
                                     @error('email')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -101,7 +109,7 @@
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control @error('password') is-invalid @enderror" id="password"
-                                        type="password" name="password" required="" 
+                                        type="password" name="password" required=""
                                         placeholder="{{ __('Register Password') }}">
                                     @error('password')
                                         <span class="text-danger"> {{ $message }} </span>
@@ -114,8 +122,7 @@
                                 <div class="col-12">
                                     <input class="form-control @error('password_confirmation') is-invalid @enderror"
                                         id="password_confirmation" type="password" name="password_confirmation"
-                                        required="" 
-                                        placeholder="{{ __('Confirm Password') }}">
+                                        required="" placeholder="{{ __('Confirm Password') }}">
                                     @error('password_confirmation')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -130,7 +137,7 @@
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck1">
                                         <label class="form-label ms-1 fw-normal" for="customCheck1">
-                                            {{ __('I accept the ') }} 
+                                            {{ __('I accept the ') }}
                                             <a href="#" class="text-primary">
                                                 {{ __('Terms and Conditions') }}
                                             </a>
@@ -142,8 +149,7 @@
                             {{-- Botón Registrarse --}}
                             <div class="form-group text-center row mt-3 pt-1">
                                 <div class="col-12">
-                                    <button class="btn btn-info w-100 waves-effect waves-light"
-                                        type="submit">
+                                    <button class="btn btn-info w-100 waves-effect waves-light" type="submit">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
@@ -158,11 +164,158 @@
                                 </div>
                             </div>
 
+                            <div>
+                                <hr>
+                            </div>
+
+                            {{-- Inicia sesión con Redes Sociales --}}
+                            <div class="text-center">
+                                {{-- <h5 class="mt-3 text-muted">{{ __('Or Register with Yor Favorite Social Account') }}</h5> --}}
+                                <ul class="social-list list-inline mt-3 mb-0">
+
+                                    {{-- Facebook --}}
+                                    <li class="list-inline-item">
+                                        {{-- <a href="#" class="social-list-item border-primary text-primary">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a> --}}
+                                        <a href="#" class="social-list-item border-muted text-muted disabled">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </li>
+
+                                    {{-- Google --}}
+                                    <li class="list-inline-item">
+                                        {{-- <a href="/auth/google/register/redirect"
+                                            class="social-list-item border-danger text-danger">
+                                            <i class="mdi mdi-google"></i>
+                                        </a> --}}
+                                        <a href="javascript: void(0);" class="social-list-item border-muted text-muted disabled">
+                                            <i class="mdi mdi-google"></i>
+                                        </a>
+                                    </li>
+
+                                    {{-- Twitter --}}
+                                    <li class="list-inline-item">
+                                        {{-- <a href="javascript: void(0);" class="social-list-item border-info text-info">
+                                            <i class="mdi mdi-twitter"></i>
+                                        </a> --}}
+                                        <a href="javascript: void(0);"
+                                            class="social-list-item border-muted text-muted disabled">
+                                            <i class="mdi mdi-twitter"></i>
+                                        </a>
+                                    </li>
+
+                                    {{-- GitHub --}}
+                                    <li class="list-inline-item">
+                                        {{-- <a href="/auth/github/register/redirect"
+                                            class="social-list-item border-primary text-primary">
+                                            <i class="mdi mdi-github"></i>
+                                        </a> --}}
+                                        <a href="javascript: void(0);"
+                                            class="social-list-item border-muted text-muted disabled">
+                                            <i class="mdi mdi-github"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            {{-- Botón Registrarse con Redes Sociales --}}
+                            <div class="mt-2 text-center">
+                                <button type="button" class="btn btn-secondary waves-effect waves-light" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#myModal">
+                                    {{ __('Or Register with Yor Favorite Social Account') }}
+                                </button>
+                            </div>
+                            {{-- Ventana Modal --}}
+                            <div id="myModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="myModalLabel">{{ __('Social Media Accounts') }}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <h5>{{ __('Information') }}</h5>
+                                            
+                                            <p>¿Qué es el inicio de sesión social? El inicio de sesión social es un inicio de sesión único para los usuarios finales. Al utilizar la información de inicio de sesión existente de un proveedor de redes sociales como Facebook, GitHub o Google, el usuario puede iniciar sesión en un sitio web de terceros en lugar de crear una nueva cuenta específicamente para ese sitio web.</p>
+                                            <p>Al permitir a los usuarios registrarse y verificarse con un simple clic a través de su perfil de redes sociales existente, se elimina la necesidad de largos formularios de registro y recuperación de contraseñas. De hecho, el 75% de los jóvenes entre 18 y 25 años prefieren el inicio de sesión social.</p>
+                                            <p>El inicio de sesión social es más rápido y conveniente y elimina problemas como la fricción al iniciar sesión y la fatiga de las contraseñas. No es necesario confirmar correo electrónico ni cambiar o asignar contraseñas desde esta plataforma, ya que todo eso se hace desde el proveedor de redes sociales.</p>
+                                            <p>A continuación, te puedes registrar con tu red social favorita.</p>
+                                            
+                                            {{-- Inicia sesión con Redes Sociales --}}
+                                            <div class="text-center">
+                                                {{-- <h5 class="mt-3 text-muted">{{ __('Or Register with Yor Favorite Social Account') }}</h5> --}}
+                                                <ul class="social-list list-inline mt-3 mb-0">
+
+                                                    {{-- Facebook --}}
+                                                    <li class="list-inline-item">
+                                                        {{-- <a href="#" class="social-list-item border-primary text-primary">
+                                                            <i class="mdi mdi-facebook"></i>
+                                                        </a> --}}
+                                                        <a href="#" class="social-list-item border-muted text-muted disabled">
+                                                            <i class="mdi mdi-facebook"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    {{-- Google --}}
+                                                    <li class="list-inline-item">
+                                                        <a href="/auth/google/register/redirect"
+                                                            class="social-list-item border-danger text-danger">
+                                                            <i class="mdi mdi-google"></i>
+                                                        </a>
+                                                        {{-- <a href="javascript: void(0);" class="social-list-item border-muted text-muted disabled">
+                                                            <i class="mdi mdi-google"></i>
+                                                        </a> --}}
+                                                    </li>
+
+                                                    {{-- Twitter --}}
+                                                    <li class="list-inline-item">
+                                                        {{-- <a href="javascript: void(0);" class="social-list-item border-info text-info">
+                                                            <i class="mdi mdi-twitter"></i>
+                                                        </a> --}}
+                                                        <a href="javascript: void(0);"
+                                                            class="social-list-item border-muted text-muted disabled">
+                                                            <i class="mdi mdi-twitter"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    {{-- GitHub --}}
+                                                    <li class="list-inline-item">
+                                                        <a href="/auth/github/register/redirect"
+                                                            class="social-list-item border-primary text-primary">
+                                                            <i class="mdi mdi-github"></i>
+                                                        </a>
+                                                        {{-- <a href="javascript: void(0);"
+                                                            class="social-list-item border-muted text-muted disabled">
+                                                            <i class="mdi mdi-github"></i>
+                                                        </a> --}}
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light waves-effect" data-bs-dismiss="modal">{{ __('Close') }}</button>
+                                            {{-- <button type="button" class="btn btn-primary waves-effect waves-light">Save changes</button> --}}
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div>
+
+
                         </form>
                         <!-- end form -->
 
+                        <div>
+                            <hr>
+                        </div>
+
                         {{-- Botón Regresar al inicio --}}
-                        <div class="flex items-center justify-end mt-2">
+                        <div class="text-center">
                             <a href="{{ route('home') }}" class="ms-2 text-sm text-gray-600">
                                 {{ __('Back to Home') }}
                             </a>
