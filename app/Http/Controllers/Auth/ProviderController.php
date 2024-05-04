@@ -58,7 +58,6 @@ class ProviderController extends Controller
 
             // dd($user); // Regresa null si no existe el usuario
 
-            
 
             // Si no existe el usuario lo creamos
             if($user === null){

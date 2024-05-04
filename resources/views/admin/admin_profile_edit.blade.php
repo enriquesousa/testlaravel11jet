@@ -106,8 +106,11 @@
                                         {{ __('Username Short') }}
                                     </label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" name="username" type="text" id="username"
+                                        <input class="form-control @error('username') is-invalid @enderror" name="username" type="text" id="username"
                                             value="{{ $editData->username }}">
+                                        @error('username')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -118,8 +121,11 @@
                                         {{ __('Telephone') }}
                                     </label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" name="phone" type="number" id="phone"
+                                        <input class="form-control @error('phone') is-invalid @enderror" name="phone" type="number" id="phone"
                                             value="{{ $editData->phone }}">
+                                        @error('phone')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
 

@@ -99,6 +99,11 @@ class AdminController extends Controller
     public function StoreProfile(Request $request)
     {
 
+        $validateData = $request->validate([
+            'username' => 'unique:users,username,' . Auth::user()->id,
+            'phone' => 'unique:users,phone,' . Auth::user()->id,
+        ]);
+
         // Para saber que usuario esta logueado
         $id = Auth::user()->id;
         $data = User::find($id);
