@@ -3,7 +3,6 @@
 
 <div class="page-content">
     <div class="container-fluid">
-
         <div class="row">
 
             {{-- Columna 1 --}}
@@ -40,6 +39,7 @@
                                 <h4 class="mb-0">{{ $adminData->name }} </h4>
                             @endif
                             
+                            {{-- Email de Admin --}}
                             <p class="text-muted">{{ $adminData->email }}</p>
 
                             {{-- @if ($adminData->provider != null)
@@ -91,10 +91,8 @@
                     </div>
                 </div>
             </div>
-            
 
         </div>
-
     </div>
 </div>
 

@@ -26,7 +26,20 @@
                                 {{-- <h4 class="card-title">Nombre</h4> --}}
 
                                 {{-- Nombre de Admin --}}
-                                <h4 class="mb-0">{{ $adminData->name }}</h4>
+                                @php
+                                    $login_provider = NULL;
+                                    if($adminData->provider != null){
+                                        $login_provider = $adminData->provider;
+                                    }
+                                @endphp
+
+                                {{-- Nombre de Admin --}}
+                                @if ($login_provider != null)
+                                    <h4 class="mb-0">{{ $adminData->name }} ({{ $login_provider }})</h4>
+                                @else
+                                    <h4 class="mb-0">{{ $adminData->name }} </h4>
+                                @endif
+
                                 <p class="text-muted">{{ $adminData->email }}</p>
 
                                 {{-- {{ route('admin.edit.jet.profile') }} --}}
@@ -78,7 +91,6 @@
                 {{-- Columna 2 Change Password --}}
                 <div class="col-lg-8">
                     <div class="card">
-
                         <div class="card-body">
 
                             <h4 class="mb-4">{{ __('Change Password') }}</h4>
@@ -96,7 +108,6 @@
                                 @endforeach
                             @endif
 
-
                             <form method="POST" action="{{ route('admin.update.password') }}">
                                 @csrf
 
@@ -106,8 +117,11 @@
                                         {{ __('Current Password') }}
                                     </label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" name="antiguaContraseña" type="password"
-                                            id="antiguaContraseña" autofocus>
+                                        @if ($login_provider != null)
+                                            <input class="form-control" name="antiguaContraseña" type="password" id="antiguaContraseña" disabled>
+                                        @else
+                                            <input class="form-control" name="antiguaContraseña" type="password" id="antiguaContraseña" autofocus>
+                                        @endif
                                     </div>
                                 </div>
 
@@ -117,8 +131,11 @@
                                         {{ __('New Password') }}
                                     </label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" name="nuevaContraseña" type="password"
-                                            id="nuevaContraseña">
+                                        @if ($login_provider != null)
+                                            <input class="form-control" name="nuevaContraseña" type="password" id="nuevaContraseña" disabled>
+                                        @else
+                                            <input class="form-control" name="nuevaContraseña" type="password" id="nuevaContraseña">
+                                        @endif
                                     </div>
                                 </div>
 
@@ -128,16 +145,21 @@
                                         {{ __('Confirm Password') }}
                                     </label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" name="confirmarContraseña" type="password"
-                                            id="confirmarContraseña">
+                                        @if ($login_provider != null)
+                                            <input class="form-control" name="confirmarContraseña" type="password" id="confirmarContraseña" disabled>
+                                        @else
+                                            <input class="form-control" name="confirmarContraseña" type="password" id="confirmarContraseña">
+                                        @endif
                                     </div>
                                 </div>
 
 
-
                                 {{-- Botón --}}
-                                <input type="submit" class="btn btn-info waves-effect waves-light"
-                                    value="{{ __('Update Password') }}">
+                                @if ($login_provider != null)
+                                    <input type="submit" class="btn btn-info waves-effect waves-light" value="{{ __('Update Password') }}" disabled>
+                                @else
+                                    <input type="submit" class="btn btn-info waves-effect waves-light" value="{{ __('Update Password') }}">
+                                @endif
 
                             </form>
 

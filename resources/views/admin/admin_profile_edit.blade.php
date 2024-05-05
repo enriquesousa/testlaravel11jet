@@ -28,7 +28,19 @@
                                 {{-- <h4 class="card-title">Nombre</h4> --}}
 
                                 {{-- Nombre de Admin --}}
-                                <h4 class="mb-0">{{ $adminData->name }}</h4>
+                                @php
+                                    $login_provider = NULL;
+                                    if($adminData->provider != null){
+                                        $login_provider = $adminData->provider;
+                                    }
+                                @endphp
+                                @if ($login_provider != null)
+                                    <h4 class="mb-0">{{ $adminData->name }} ({{ $login_provider }})</h4>
+                                @else
+                                    <h4 class="mb-0">{{ $adminData->name }} </h4>
+                                @endif
+
+                                {{-- Email de Admin --}}
                                 <p class="text-muted">{{ $adminData->email }}</p>
 
                                 {{-- {{ route('admin.edit.jet.profile') }} --}}
@@ -93,8 +105,12 @@
                                         {{ __('Name') }}
                                     </label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" name="name" type="text" id="name"
-                                            value="{{ $editData->name }}">
+                                        @if ($login_provider != null)
+                                            <input class="form-control" name="name" type="text" id="name" value="{{ $editData->name }}" disabled>
+                                            <input type="hidden" name="name" id="name" value="{{ $editData->name }}">
+                                        @else
+                                            <input class="form-control" name="name" type="text" id="name" value="{{ $adminData->name }}">
+                                        @endif
                                     </div>
                                 </div>
 
@@ -133,8 +149,12 @@
                                 <div class="row mb-3">
                                     <label for="email" class="col-sm-2 col-form-label">{{ __('Email') }}</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" name="email" type="text" id="email"
-                                            value="{{ $editData->email }}">
+                                        @if ($login_provider != null)
+                                            <input class="form-control" name="email" type="text" id="email" value="{{ $editData->email }}" disabled>
+                                            <input type="hidden" name="email" id="email" value="{{ $editData->email }}">
+                                        @else
+                                            <input class="form-control" name="email" type="text" id="email" value="{{ $adminData->email }}">
+                                        @endif
                                     </div>
                                 </div>
 
