@@ -33,14 +33,14 @@
             <ul class="metismenu list-unstyled" id="side-menu">
 
                 <!-- * MENU -->
-                <li class="menu-title">Menu</li>
+                <li class="menu-title">{{ __('Panels') }}</li>
 
                 <!-- Dashboard Panel de Inicio -->
                 <li>
                     <a href="{{ route('dashboard') }}" class="waves-effect">
                         <i class="ri-dashboard-line"></i>
                         {{-- <span class="badge rounded-pill bg-success float-end">3</span> --}}
-                        <span>Panel de Inicio</span>
+                        <span>{{ __('Initial Panel') }}</span>
                     </a>
                 </li>
 
@@ -49,23 +49,25 @@
                     <a href="{{ route('dashboard_admin') }}" class="waves-effect">
                         <i class="ri-dashboard-line"></i>
                         {{-- <span class="badge rounded-pill bg-success float-end">3</span> --}}
-                        <span>Panel de Admin</span>
+                        <span>{{ __('Admin Panel') }}</span>
                     </a>
                 </li>
 
 
+                <!-- * DATA -->
+                <li class="menu-title">{{ __('Data') }}</li>
 
                 <!-- Proveedores -->
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="mdi mdi-factory"></i>
-                        <span>Proveedores</span>
+                        <span>{{ __('Suppliers') }}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         {{-- {{ route('list.supplier') }} --}}
-                        <li><a href="">Lista</a></li>
+                        <li><a href="">{{ __('List') }}</a></li>
                         {{-- {{ route('add.supplier') }} --}}
-                        <li><a href="">Agregar</a></li>
+                        <li><a href="">{{ __('Add') }}</a></li>
                     </ul>
                 </li>
 
@@ -73,97 +75,14 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-user-3-line"></i>
-                        <span>Clientes</span>
+                        <span>{{ __('Customers') }}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         {{-- {{ route('list.customer') }} --}}
-                        <li><a href="">Lista</a></li>
+                        <li><a href="">{{ __('List') }}</a></li>
                         {{-- {{ route('add.customer') }} --}}
-                        <li><a href="">Agregar</a></li>
+                        <li><a href="">{{ __('Add') }}</a></li>
                         {{-- {{ route('credit.customer') }} --}}
-                        <li><a href="">Con Adeudo</a></li>
-                        {{-- {{ route('paid.customer') }} --}}
-                        <li><a href="">Entradas</a></li>
-                        {{-- {{ route('customer.wise.report') }} --}}
-                        <li><a href="">Por Deudor/Acreedor</a></li>
-                    </ul>
-                </li>
-
-                <!-- Unidades -->
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="mdi mdi-tape-measure"></i>
-                        <span>Unidades</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        {{-- {{ route('list.unit') }} --}}
-                        <li><a href="">Lista</a></li>
-                        {{-- {{ route('add.unit') }} --}}
-                        <li><a href="">Agregar</a></li>
-                    </ul>
-                </li>
-
-                <!-- Categorías -->
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-function-line"></i>
-                        <span>Categorías</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        {{-- {{ route('list.category') }} --}}
-                        <li><a href="">Lista</a></li>
-                        {{--  --}}
-                        <li><a href="">Agregar</a></li>
-                    </ul>
-                </li>
-
-                <!-- Productos -->
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-shopping-basket-2-line"></i>
-                        <span>Productos</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        {{-- {{ route('list.product') }} --}}
-                        <li><a href="">Lista</a></li>
-                        {{-- {{ route('add.product') }} --}}
-                        <li><a href="">Agregar</a></li>
-                        {{-- {{ route('list.product.category') }} --}}
-                        <li><a href="">Por Categoría</a></li>
-                        {{-- {{ route('list.product.supplier') }} --}}
-                        <li><a href="">Por Proveedor</a></li>
-                    </ul>
-                </li>
-
-                <!-- Compras -->
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-shopping-bag-line"></i>
-                        <span>Compras</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        {{-- {{ route('list.purchase') }} --}}
-                        <li><a href="">Lista</a></li>
-                        {{-- {{ route('add.purchase') }} --}}
-                        <li><a href="">Agregar</a></li>
-                        {{-- {{ route('pending.purchase') }} --}}
-                        <li><a href="">Aprobar</a></li>
-                        {{-- {{ route('daily.purchase.report') }} --}}
-                        <li><a href="">Reporte por Fechas</a></li>
-                    </ul>
-                </li>
-
-                <!-- Facturas - Invoices -->
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-article-line"></i>
-                        <span>Facturas</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        {{-- {{ route('todas.invoice') }} --}}
-                        <li><a href="">Lista Todas</a></li>
-                        {{-- {{ route('list.invoice') }} --}}
-                        <li><a href="">Lista Aprobadas</a></li>
                     </ul>
                 </li>
 

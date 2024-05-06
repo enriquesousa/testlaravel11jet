@@ -180,7 +180,31 @@
     "Email verified successfully!": "Correo electrónico verificado correctamente!",
     "Social Media Accounts": "Cuentas de Redes Sociales", 
     "Information": "Información",
-    "Close": "Cerrar"
+    "Close": "Cerrar",
+
+    "About this application": "Acerca de esta Aplicación",
+    "You can click on any of the following tabs to see the information for each of them.": "Puede hacer clic en cualquiera de las siguientes pestañas para ver la información de cada una de ellas.",
+
+    "Panels": "Paneles",
+    "Initial Panel": "Panel Inicial",
+    "Admin Panel": "Panel de Administración",
+    "Data": "Datos",
+    "Suppliers": "Proveedores",
+    "Employees": "Empleados",
+    "Clients": "Clientes",
+    "Customers": "Clientes",
+    "List": "Lista",
+    "Add": "Agregar",
+    "Edit": "Editar",
+    "Delete": "Eliminar",
+    "Show": "Mostrar",
+    "Export": "Exportar",
+    "Import": "Importar",
+    "Create": "Crear",
+    "View": "Ver",
+    "Search": "Buscar",
+    "Filter": "Filtrar"
+    
 
 
 }
